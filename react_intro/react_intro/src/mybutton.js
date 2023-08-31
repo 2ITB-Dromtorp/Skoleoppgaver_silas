@@ -37,6 +37,9 @@ export default function MyApp() {
       <h1>Counters that update together</h1>
       <MyButton count={count} onClick={handleClick} />
       <MyButton count={count} onClick={handleClick} />
+      <h1>Counters that don't update together</h1>
+      <MyButtonNo />
+      <MyButtonNo />
       <Uselist />
     </div>
   );
@@ -52,38 +55,17 @@ function MyButton({ count, onClick }) {
 
 
 
-/*
-function MyButton() {
 
-    const [count, setCount] = useState(0);
+function MyButtonNo() {
+    const [countNo, setCountNo] = useState(0);
 
-    function handleClick() {
-        setCount(count + 1);
+    function handleClickNo() {
+        setCountNo(countNo + 1);
     }
 
     return (
-      <button onClick={handleClick} className='Button'>
-      Clicked {count} times
+      <button onClick={handleClickNo} className='Button'>
+      Clicked {countNo} times
       </button>
     ); 
-
-    }
-   
-
-  export default function Mybutton() {
-
-    return (
-      <div>
-        <h1>Welcome to my app</h1>
-        <MyButton />
-        <MyButton />
-        <Uselist />
-      </div>
-    );
-  }
-
-    function SayHi() {
-        console.log("wuhuu Gravemaskin");
-    }
 }
-*/
