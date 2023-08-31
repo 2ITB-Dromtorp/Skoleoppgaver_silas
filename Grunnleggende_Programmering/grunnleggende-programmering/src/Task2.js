@@ -5,7 +5,7 @@ function A() {
     let num1 = 8;
     let num2 = 8;
     let areal = num1 * num2;
-    console.log("arealet er ", areal)
+    console.log("2a) arealet er ", areal)
 
     return(
         <div className ='oppgaveboks'>
@@ -23,14 +23,14 @@ function B() {
     let num1 = 12;
     let num2 = 8;
     let areal = (num1 * num2) / 2;
-    console.log("arealet av en trekant er ", areal)
+    console.log("2b) arealet av en trekant er ", areal)
 
     return(
         <div className ='oppgaveboks'>
             <h1>b)</h1>
             <p>Lag et program som regner ut arealet av en trekant. 
                 Formelen for en trekant er A = L * B / 2 Returner arealet i funksjonen.</p>
-            <p>svar: </p>            
+            <p> se i console logen </p>             
         </div>
     );
 

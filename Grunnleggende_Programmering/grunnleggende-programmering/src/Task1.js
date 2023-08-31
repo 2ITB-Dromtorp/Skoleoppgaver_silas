@@ -3,7 +3,7 @@ import './task.css'
 function A() {
     let testN = 8;
 
-    console.log(testN);
+    console.log("1a)",testN);
 
     return(
         <div className ='oppgaveboks'>
@@ -17,7 +17,7 @@ function A() {
 }
 
 function B() {
-    let testT = 'oppgave b tekst her';
+    let testT = '1b) oppgave b tekst her';
 
     console.log(testT);
 
@@ -37,7 +37,7 @@ function C() {
     let num2 = 3;
     let produkt = num1 * num2;
 
-    console.log("produktet er", produkt);
+    console.log("1c) produktet er", produkt);
 
     return(
         <div className ='oppgaveboks'>
@@ -55,7 +55,7 @@ function D() {
     let num2 = 3;
     let broek = num1 / num2;
 
-    console.log("verdien av brøken er", broek);
+    console.log("1d) verdien av brøken er", broek);
 
     return(
         <div className ='oppgaveboks'>
