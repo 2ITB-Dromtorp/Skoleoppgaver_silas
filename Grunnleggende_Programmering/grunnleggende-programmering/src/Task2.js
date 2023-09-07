@@ -49,14 +49,14 @@ function C() {
  
         const [inputNum, setInputNum] = useState("");
       
-        const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const handleChange = (e) => {
           // 👇 Store the input value to local state
           setInputNum(e.target.value);
         };
 
         const [inputNum2, setInputNum2] = useState("");
       
-        const handleChange2 = (e: ChangeEvent<HTMLInputElement>) => {
+        const handleChange2 = (e) => {
           // 👇 Store the input value to local state
           setInputNum2(e.target.value);
         };
