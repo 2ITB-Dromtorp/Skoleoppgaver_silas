@@ -4,8 +4,19 @@ import {ChangeEvent, useState } from 'react'
 function A() {
 
     const [inputText, setInputText] = useState("");
-    let text
+    let svar = "";
 
+    if (inputText == "s") {
+        svar = "du er svensk"; 
+    } else if (inputText == "n"){
+        svar = "du er norsk";
+    } else if (inputText == "d"){
+        svar = "du er dansk"
+    } else{
+        svar = "du er ikke fra skandinavia"
+    }
+    
+    
     const test = () => {
         console.log(inputText)
     }
@@ -13,11 +24,7 @@ function A() {
     const change = event => {
         setInputText(event.target.value)
     }
-    
-    if (inputText == "s") {
         
-    }
-
     return(
         <div className ='oppgaveboks'>
             <h1>a)</h1>
@@ -25,11 +32,11 @@ function A() {
                 Prøv å forklare hvordan det fungerer.</p>
 
             <label>
-                skriv s viss du er svensk eller n viss du er norsk: <input type='text' value={inputText} onChange={change}/> 
+                skriv s viss du er svensk eller n viss du er norsk eller d viss du er dansk: <input type='text' value={inputText} onChange={change}/> 
             </label>
             <button onClick={test}>test</button>
 
-            <p> se i console logen </p>             
+            <p> {svar} </p>             
         </div>
     );
 }
