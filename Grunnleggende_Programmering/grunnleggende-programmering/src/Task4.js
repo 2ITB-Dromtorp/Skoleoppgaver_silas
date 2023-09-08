@@ -23,7 +23,7 @@ function A() {
     };
   
     const friendChange = () => {
-        setfriendNum(randomNumberInRange(0, 50));
+        setfriendNum(randomNumberInRange(0, 1000000));
         console.log("forrige nummer var", friendNum);
     };
         

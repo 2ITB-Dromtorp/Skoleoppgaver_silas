@@ -14,7 +14,7 @@ function A() {
             <h1>a)</h1>
             <p>spørsmål: Lag et program som regner ut arealet av et rektangel. Lengden er 8 og bredden er 8. 
                 Skriv dette som funksjon i javascript.</p>
-            <p>svar: </p>            
+            <p>svar: {areal} </p>            
         </div>
     );
 
