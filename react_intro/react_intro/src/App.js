@@ -21,6 +21,7 @@ function App() {
         <h1>react intro</h1>        
         <Profile />
         <DigitalClock />
+        <Mybutton />
 
 
 
