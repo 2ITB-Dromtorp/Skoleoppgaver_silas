@@ -8,20 +8,20 @@ function App() {
 
   const [Num, setNum] = useState(0);
   const [UpNum, setUpNum] = useState(0);
-  const [SpeedNum, setSpeedNum] = useState(1000);
-  const [SpeedPriceMod, setSpeedPriceMod] = useState(0);
+  const [Upgarde1priceMod, setUpgarde1priceMod] = useState(0);
+  const [Upgarde2priceMod, setUpgarde2priceMod] = useState(0);
 
   return (
     <div className="App">
       <header className="App-header">
         <div className='catland'>
-          <Cat setNum={setNum} Num={Num} UpNum={UpNum} SpeedNum={SpeedNum} />
+          <Cat setNum={setNum} Num={Num} UpNum={UpNum} />
         </div> {/*slutt catland */}
         <div className='infoland'>
           
         </div> {/*slutt infoland */}
         <div className='upgradeland'>
-          <Upgarde setUpNum={setUpNum} setNum={setNum} Num={Num} UpNum={UpNum} SpeedNum={SpeedNum} setSpeedNum={setSpeedNum} SpeedPriceMod={SpeedPriceMod} setSpeedPriceMod={setSpeedPriceMod} />
+          <Upgarde setUpNum={setUpNum} setNum={setNum} Num={Num} UpNum={UpNum} Upgarde1priceMod={Upgarde1priceMod} Upgarde2priceMod={Upgarde2priceMod} setUpgarde1priceMod={setUpgarde1priceMod} setUpgarde2priceMod={setUpgarde2priceMod} />
         </div> {/*slutt upgradeland */}
       </header>
     </div>

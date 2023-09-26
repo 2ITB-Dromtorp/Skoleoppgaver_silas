@@ -3,6 +3,7 @@ import './App.css';
 import Mybutton from './mybutton';
 import Profile from './imageEX';
 import DigitalClock from './digitalClock';
+import Rock_paper_scissors from './R_P_S';
 
 let isLoggedIn = false;
 let content;
@@ -19,9 +20,8 @@ function App() {
       <header className="App-header">
         
         <h1>react intro</h1>        
-        <Profile />
-        <DigitalClock />
-        <Mybutton />
+        <Rock_paper_scissors />
+        {/* <DigitalClock />*/}
 
 
 

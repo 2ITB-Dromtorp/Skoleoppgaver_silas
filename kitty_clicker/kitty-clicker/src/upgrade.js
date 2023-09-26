@@ -2,81 +2,88 @@ import './cat.css';
 import React, {ChangeEvent, useState, useEffect } from 'react'
 import './App';
 
-/*
-function UpgradeA({setUpNum, Num, UpNum}) {
-        
-    
-    
-    const changeUp = () => {
-        setUpNum(UpNum+1)
-        console.log(UpNum)
-        console.log(Num)
+export default function Upgarde({setUpNum, setNum, setSpeedNum, setUpgarde1priceMod, setUpgarde2priceMod, Num, UpNum, Upgarde1priceMod, Upgarde2priceMod}) {
+
+    //velge prisene på oppgraderingene
+    let Upgarde1price = 10 + (Upgarde1priceMod*5);
+    let Upgarde2price = 100 + (Upgarde2priceMod*10);
+    let CoolUp1_1price = 100
+    let CoolUp1_1 = false;
+
+
+    //UpNum er auto klikker nummeret som bruker når auto klikkeren klikker for deg.
+    //legge til 0.1 i UpNum
+    const changeUp1 = () => {
+        if (Num>=Upgarde1price) {
+            setUpNum(UpNum+0.1)
+            setUpgarde1priceMod(Upgarde1priceMod+1)
+            setNum(Num-Upgarde1price)
+        }
+
             
     }
-    return(
-        <div className ='oppgaveboks'>
-
-        <button onClick={changeUp}> <img className='upgradePic' src='https://silsur1.github.io/images/space_cat(150.104).png'/> space cat </button>
-        <br/>
-        
-        </div>
-    );
-}
-*/
 
 
-export default function Upgarde({setUpNum, setNum, setSpeedNum, setSpeedPriceMod, Num, UpNum, SpeedNum, SpeedPriceMod}) {
-
-    /*const [SpeedNum, setSpeedNum] = useState(1000);
-    const [SpeedPriceMod, setSpeedPriceMod] = useState(0);*/
-
-    let spacePrice = 10 + (UpNum*13);
-    let speedPrice = 100 + (SpeedPriceMod*170);
-
-    const changeUp = () => {
-        if (Num>=spacePrice) {
+    //legge til 1 i UpNum
+    const changeUp2 = () => {
+        if (Num>=Upgarde2price) {
             setUpNum(UpNum+1)
-            setNum(Num-spacePrice)
+            setUpgarde2priceMod(Upgarde2priceMod+1)
+            setNum(Num-Upgarde2price)
         }
 
             
     }
 
-    const changeSpeed = () => {
-        if (Num>=speedPrice) {
-            setSpeedNum(SpeedNum-10)
-            setSpeedPriceMod(SpeedPriceMod+1)
-            setNum(Num-speedPrice)
+    const changeCoolUp1_1 = () => {
+        if (Num>=Upgarde2price) {
+            CoolUp1_1=true
+            setNum(Num-CoolUp1_1price)
         }
 
             
     }
 
+    if (CoolUp1_1 == true) {
+        
+    }
+
+    //dette er auto klikkeren den har blitt flyttet over i cat.js det er en forklaring på hvordan den fungerer der
+    /*
     useEffect(() => {
     
-        if (UpNum >= 1) {
+        if (UpNum >= 0.1) {
             const myInterval = setInterval(() => {
         
                 setNum(Num+(1*UpNum));
         
-            }, SpeedNum);
+            }, 1000);
             
-            return () => clearInterval(myInterval);
+           return () => clearInterval(myInterval);
         }
     
     
     });  
-
+*/
 
     return (
-      <div>
+
+
+    <div>
+
+        <div>
+            <h1>cooler Upgardes</h1>
+            <button onClick={changeCoolUp1_1}> cool {Upgarde2price} </button>
+            <br/>
+        </div>
+
         <h1>Upgardes</h1>
         <p>når du trykker på knappene så skal du få katter skjapere.</p>
         
-        <button onClick={changeUp}> <img className='upgradePic' src='https://silsur1.github.io/images/space_cat(150.104).png'/> space cat {spacePrice} </button>
+        <button onClick={changeUp1}> <img className='upgradePic' src='https://silsur1.github.io/images/space_cat(150.104).png'/> space cat {Upgarde1price} </button>
         <br/>
-        <button onClick={changeSpeed}> cat speed {speedPrice} </button>
+        <button onClick={changeUp2}> cat speed {Upgarde2price} </button>
         <br/>
-      </div>
+    </div>
     );
 }
