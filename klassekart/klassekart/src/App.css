@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #282c34;
 }
 
 .App-logo {
@@ -17,9 +18,8 @@
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -35,4 +35,63 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.tositteplasser {
+  display: flex;
+}
+
+.tresitteplasser {
+  display: flex;
+}
+
+.elev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  width: 75px;
+  margin-top: 2em;
+  border: solid white 2px;
+  font-size: 1em;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.leftside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  background: #282c34;
+  color: white;
+}
+
+.rightside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  background: #2f343d;
+  color: white;
+}
+
+.profile-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: #282c34;
+}
+
+.profile_box{
+  border: solid orangered 2px;
+  background: coral;
+  height: 50%;
 }

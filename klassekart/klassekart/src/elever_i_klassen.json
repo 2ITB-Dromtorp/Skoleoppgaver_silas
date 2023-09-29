@@ -1,0 +1,18 @@
+{
+    "Elever":[
+        { "Navn": "Matheo" },
+        { "Navn": "Elias" },
+        { "Navn": "Johannes" },
+        { "Navn": "Kristoffer" },
+        { "Navn": "Vetle" },
+        { "Navn": "Axel" },
+        { "Navn": "Silas" },
+        { "Navn": "Alva" },
+        { "Navn": "Mattis" },
+        { "Navn": "Theodor" },
+        { "Navn": "Gabriel" },
+        { "Navn": "Philip" },
+        { "Navn": "Ahmad" },
+        { "Navn": "Andreas" }
+    ]
+}
