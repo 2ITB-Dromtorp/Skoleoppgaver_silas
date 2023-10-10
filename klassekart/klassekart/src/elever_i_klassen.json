@@ -1,6 +1,10 @@
 {
     "Elever":[
-        { "Navn": "Matheo" },
+        { "Navn": "Matheo",
+          "alder": "17",
+          "email": "andreas@viken.no",
+          "Tlf": 90918378
+        },
         { "Navn": "Elias" },
         { "Navn": "Johannes" },
         { "Navn": "Kristoffer" },

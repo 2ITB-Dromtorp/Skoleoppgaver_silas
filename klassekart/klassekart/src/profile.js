@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import './App.css';
+import json from './profiles';
 
 
 export default function Profile() {
@@ -10,6 +11,12 @@ export default function Profile() {
     let profilesParams = useParams();
 
     console.log(profilesParams)
+
+    json.Elever.map((item, index) => {
+        if (profilesParams)
+    })
+
+
     
     return (
         <>
