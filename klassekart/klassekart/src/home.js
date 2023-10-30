@@ -1,18 +1,46 @@
 import './App.css';
 import { useNavigate } from 'react-router-dom';
 import Elev from './elev';
+import json from './profiles';
 
 export default function Home() {
 
     const navigate = useNavigate();
 
+    function swap() {
+      
+    }
+
 
     return (
 
+      <div className="container">
 
+        <button onClick={swap}> bytt plasser </button>
 
-        <div className="container">
+        <div className='rightside'>
 
+        <div className='box'>
+
+            <div className='tositteplasser'> 
+                <Elev name="Theodor"/>
+                <Elev name="Gabriel"/>
+          </div>
+
+          <div className='tositteplasser'> 
+                <Elev />
+                <Elev name="Philip"/>
+          </div>
+
+          <div className='tositteplasser'> 
+                <Elev name="Ahmad"/>
+                <Elev name="Andreas"/>
+          </div>
+
+          </div>
+
+          </div>        
+        
         <div className='leftside'>
 
             <div className='box'>
@@ -40,30 +68,10 @@ export default function Home() {
           </div>
             
 
-        <div className='rightside'>
 
-        <div className='box'>
-
-            <div className='tositteplasser'> 
-                <Elev name="Theodor"/>
-                <Elev name="Gabriel"/>
-          </div>
-
-          <div className='tositteplasser'> 
-                <Elev />
-                <Elev name="Philip"/>
-          </div>
-
-          <div className='tositteplasser'> 
-                <Elev name="Ahmad"/>
-                <Elev name="Andreas"/>
-          </div>
-
-          </div>
-
-          </div>
 
 
         </div>
+
     )
 }

@@ -11,15 +11,15 @@ export default function Profile() {
 
     let profilesParams = useParams();
 
-    const [profile, setprofile] = useState({});
+    const [profile, setprofile] = useState();
 
+    
     json.Elever.map((item, index) => {
         if (profilesParams.profile == item.Navn) {
             console.log(item)
-            setprofile(item)
+
         }
     })
-
 
     
     return (

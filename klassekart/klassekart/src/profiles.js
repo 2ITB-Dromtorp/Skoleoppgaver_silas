@@ -3,7 +3,7 @@ let json = {
        {
          "Navn": "Matheo",
          "alder": 17,
-         "email": "andreas@viken.no",
+         "email": "matheo@viken.no",
          "Tlf": 90918378,
          "image": "images/profile-image.jpg"
        },
@@ -67,7 +67,7 @@ let json = {
        { 
         "Navn": "Theodor",
         "alder": 17,
-        "email": "axel@viken.no",
+        "email": "theodor@viken.no",
         "Tlf": 90918387,
         "image": "images/profile-image.jpg"
        },
