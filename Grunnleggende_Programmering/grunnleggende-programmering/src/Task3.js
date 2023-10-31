@@ -12,7 +12,7 @@ function A() {
         svar = "du er norsk";
     } else if (inputText == "d"){
         svar = "du er dansk"
-    } else if (inputText == 188118){
+    } else if (inputText == 563788){
         svar = "www.youtube.com/watch?v=pYYYNTjQaes"
     } else{
         svar = "du er ikke fra skandinavia"
