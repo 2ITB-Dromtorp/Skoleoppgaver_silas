@@ -6,6 +6,13 @@ import Home from './home';
 
 function App() {
 
+  /*
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
+   <button onClick={refreshPage}>Click to reload!</button>
+  */
   return (
 
     <>
@@ -14,6 +21,8 @@ function App() {
           <Route path="/:profile" element={<Profile />} />
           
        </Routes>
+
+
     </>
 
         

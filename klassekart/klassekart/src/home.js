@@ -6,6 +6,12 @@ import json from './profiles';
 
 export default function Home() {
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
+  
+
     const navigate = useNavigate();
 
     const students = ["Matheo", "Elias", "Johannes", "Kristoffer", "Vetle", "Axel", "Silas", "Alva", "Mattis", "Theodor", "Gabriel", "-", "Philip", "Ahmad", "Andreas"]
@@ -19,12 +25,6 @@ export default function Home() {
     };  
 
     shuffleArray(students); 
-   
-    function swap() {
-
-      
-    }
-
 
     return (
 
@@ -53,7 +53,7 @@ export default function Home() {
                 <Elev name= {students[8]}/>
               </div>
 
-              <button onClick={swap}> bytt plasser </button>
+              <button onClick={refreshPage}> bytt plasser </button>
 
             </div>
           </div>
