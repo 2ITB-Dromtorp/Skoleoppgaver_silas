@@ -10,32 +10,32 @@ function App() {
 
   const [Epost, setEpost] = useState("");
   const [Passord, setPassord] = useState("");
+  const [IsLogedIn, setIsLogedIn] = useState(false);
 
   function setPass() {
-  setEpost("ekempel@gmail.com")
-  setPassord("skole123")
-  console.log(Epost, Passord)
+
+  console.log("epost:", Epost, "passord:", Passord, "er logget in?:", IsLogedIn)
   }
   
   return (
 
 
-
+    
 
     <>
-      <button onClick={setPass}>set password</button>
+
+      <button onClick={setPass}>er logget in?</button>
 
        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Login/Register" element={<Register />} />
-          <Route path="/Login" element={<Login />} />
+          <Route path="/" element={<Home IsLogedIn={IsLogedIn} />} />
+          <Route path="/Login/Register" element={<Register setEpost={setEpost} setPassord={setPassord} />} />
+          <Route path="/Login" element={<Login Passord={Passord} Epost={Epost} setIsLogedIn={setIsLogedIn}/>} />
 
           
        </Routes>
 
 
     </>
-
 
   );
 }

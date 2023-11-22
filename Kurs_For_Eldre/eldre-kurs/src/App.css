@@ -36,3 +36,64 @@
     transform: rotate(360deg);
   }
 }
+
+button{
+  background-color: #E6BB68;
+}
+
+div, header{
+  border: black solid 0px;
+}
+
+header{
+  display: flex;
+  background-color: #E5E5E5;
+  height: 50px;
+  margin-bottom: 15px;
+  justify-content: right;
+}
+
+.hjem{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.tilgjengeligeKurs{
+  background-color: #E5E5E5;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+}
+
+.lines{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 5px;
+  margin: 5px;
+}
+
+.dineKurs{
+  background-color: #E5E5E5;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
+
+.kursNorsk, .kursGrunnleggende_datakunnskap, .kursHeimkunnskap, .kursKroppsøving{
+  background-color: #858585;
+  width: 300px;
+  height: 150px;
+  margin: 15px;
+}
+
+.nameOfBox{
+  background-color: #E0E0E0;
+}
