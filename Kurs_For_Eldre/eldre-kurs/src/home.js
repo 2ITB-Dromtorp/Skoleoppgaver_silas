@@ -1,6 +1,6 @@
 import './App.css';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { createElement, useEffect } from 'react';
 import { useState } from 'react';
 import Register from './register';
 import Login from './login';
@@ -13,6 +13,7 @@ const [InNorsk, setInNorsk] = useState(false)
 const [InGrunnleggendeDatakunnskap, setInGrunnleggendeDatakunnskap] = useState(false)
 const [InHeimkunnskap, setInHeimkunnskap] = useState(false)
 const [InKroppsøving, setInKroppsøving] = useState(false)
+
 
 const joinNorsk = () =>{
     setInNorsk(true)
@@ -37,6 +38,10 @@ const test = () => {
     console.log("is in kroppsøving:",InKroppsøving)
 }
 
+if (InNorsk) {
+    
+}
+
 return(
     <div className='hjem'>
         <header>
@@ -55,7 +60,7 @@ return(
                 </div> {/*slutt kursNorsk*/}
 
                 <div className='kursGrunnleggende_datakunnskap'>
-                    <p>Grunnleggende_datakunnskap</p>
+                    <p>Grunnleggende datakunnskap</p>
                 </div> {/*slutt kursGrunnleggende_datakunnskap*/}
 
                 <div className='kursHeimkunnskap'>
@@ -85,7 +90,7 @@ return(
                     </div> {/*slutt kursNorsk*/}
 
                     <div className='kursGrunnleggende_datakunnskap'>
-                        <p>Grunnleggende_datakunnskap</p>
+                        <p>Grunnleggende datakunnskap</p>
 
                         <button onClick={joinGrunnleggendeDatakunnskap}>Bli med!</button>
                     </div> {/*slutt kursGrunnleggende_datakunnskap*/}
