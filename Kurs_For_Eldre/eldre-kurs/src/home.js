@@ -4,6 +4,8 @@ import { createElement, useEffect } from 'react';
 import { useState } from 'react';
 import Register from './register';
 import Login from './login';
+import DineKurs from './dineKurs';
+import TilgjengeligeKurs from './tilgjengeligeKurs';
 
 export default function Home({IsLoggedIn}) {
 
@@ -14,32 +16,39 @@ const [InGrunnleggendeDatakunnskap, setInGrunnleggendeDatakunnskap] = useState(f
 const [InHeimkunnskap, setInHeimkunnskap] = useState(false)
 const [InKroppsøving, setInKroppsøving] = useState(false)
 
+const [Kurs, setKurs] = useState([
+    {
+        id: 1,
+        kurs:'Norsk',
+        status:'TilgjengeligeKurs'
+    },
+    {
+        id: 2,
+        kurs:'GrunnleggendeDatakunnskap',
+        status:'TilgjengeligeKurs'
+    },
+    {
+        id: 3,
+        kurs:'Heimkunnskap',
+        status:'TilgjengeligeKurs'
+    },
+    {
+        id: 4,
+        kurs:'Kroppsøving',
+        status:'TilgjengeligeKurs'
+    }
+])
 
-const joinNorsk = () =>{
-    setInNorsk(true)
-    console.log(InNorsk)
-}
-const joinGrunnleggendeDatakunnskap = () =>{
-    setInGrunnleggendeDatakunnskap(true)
-    console.log(InGrunnleggendeDatakunnskap)
-}
-const joinHeimkunnskap = () =>{
-    setInHeimkunnskap(true)
-    console.log(InHeimkunnskap)
-}
-const joinKroppsøving = () =>{
-    setInKroppsøving(true)
-    console.log(InKroppsøving)
-}
-const test = () => {
-    console.log("is in Norsk:",InNorsk)
-    console.log("is in grunnlegende datakunnskap:", InGrunnleggendeDatakunnskap)
-    console.log("is in heimkunnskap:", InHeimkunnskap)
-    console.log("is in kroppsøving:",InKroppsøving)
-}
-
-if (InNorsk) {
-    
+const updateStatus=(id,newStatus)=>{
+    let allKurs=Kurs;
+    allKurs=allKurs.map(Kurs=>{
+        if(Kurs.id===id){
+            console.log('in here')
+            Kurs.status=newStatus;
+        }
+    return Kurs
+    })
+    setKurs(allKurs)
 }
 
 return(
@@ -50,6 +59,10 @@ return(
 
         <div className='main'>
 
+            <DineKurs Kurs={Kurs} setKurs={setKurs} updateStatus={updateStatus}/>
+            <TilgjengeligeKurs Kurs={Kurs} setKurs={setKurs} updateStatus={updateStatus}/>
+
+{/*
             <div className='dineKurs'>
                 <div className='nameOfBox'>
                    <p>Dine kurs</p> 
@@ -57,20 +70,20 @@ return(
 
                 <div className='kursNorsk'>
                     <p>Norsk</p>
-                </div> {/*slutt kursNorsk*/}
+                </div> {/*slutt kursNorsk}
 
                 <div className='kursGrunnleggende_datakunnskap'>
                     <p>Grunnleggende datakunnskap</p>
-                </div> {/*slutt kursGrunnleggende_datakunnskap*/}
+                </div> {/*slutt kursGrunnleggende_datakunnskap}
 
                 <div className='kursHeimkunnskap'>
                     <p>Heimkunnskap</p>
-                </div> {/*slutt kursHeimkunnskap*/}
+                </div> {/*slutt kursHeimkunnskap}
 
                 <div className='kursKroppsøving'>
                     <p>Kroppsøving</p> 
-                </div> {/*slutt kursKroppsøving*/}
-            </div> {/*slutt dineKurs*/}
+                </div> {/*slutt kursKroppsøving}
+            </div> {/*slutt dineKurs}
 
 
 
@@ -78,7 +91,7 @@ return(
 
                 <div className='nameOfBox'>
                     <p>tilgjengelige Kurs</p>
-                    <button onClick={test}>check</button>
+                    <button>check</button>
                 </div>
 
 
@@ -86,31 +99,32 @@ return(
                     <div className='kursNorsk'>
                         <p>Norsk</p>
 
-                        <button onClick={joinNorsk}>Bli med!</button>
-                    </div> {/*slutt kursNorsk*/}
+                        <button>Bli med!</button>
+                    </div> {/*slutt kursNorsk}
 
                     <div className='kursGrunnleggende_datakunnskap'>
                         <p>Grunnleggende datakunnskap</p>
 
-                        <button onClick={joinGrunnleggendeDatakunnskap}>Bli med!</button>
-                    </div> {/*slutt kursGrunnleggende_datakunnskap*/}
+                        <button>Bli med!</button>
+                    </div> {/*slutt kursGrunnleggende_datakunnskap}
                 </div>
 
                 <div className='lines'>
                     <div className='kursHeimkunnskap'>
                         <p>Heimkunnskap</p>
 
-                        <button onClick={joinHeimkunnskap}>Bli med!</button>
-                    </div> {/*slutt kursHeimkunnskap*/}
+                        <button>Bli med!</button>
+                    </div> {/*slutt kursHeimkunnskap}
 
                     <div className='kursKroppsøving'>
                         <p>Kroppsøving</p>
 
-                        <button onClick={joinKroppsøving}>Bli med!</button>
-                    </div> {/*slutt kursKroppsøving*/}
+                        <button>Bli med!</button>
+                    </div> {/*slutt kursKroppsøving}
                 </div>
 
-            </div> {/*slutt tilgjengeligeKurs*/}
+            </div> {/*slutt tilgjengeligeKurs}
+*/}
 
         </div>
 
