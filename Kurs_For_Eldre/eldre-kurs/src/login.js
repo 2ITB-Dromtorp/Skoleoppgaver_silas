@@ -51,8 +51,8 @@ export default function Login({Passord, Epost, setIsLogedIn}) {
         <label>
                 passord: <input type='password' value={InPassword} onChange={change2}/> 
         </label>
-
-        <p onClick={() => navigate('./register')}>Har du ikke en bruker? Registrer deg!</p>
+        <br/>
+        <button onClick={() => navigate('./register')}>Har du ikke en bruker? Registrer deg!</button>
     
         <p> {ErrorMes} </p>
         <button onClick={loggIn}> Logg in </button>

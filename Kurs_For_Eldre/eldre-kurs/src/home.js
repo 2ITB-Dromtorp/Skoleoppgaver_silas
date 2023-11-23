@@ -9,27 +9,49 @@ export default function Home({IsLoggedIn}) {
 
 const navigate = useNavigate();
 
-if (IsLoggedIn == true) {
-    
-} else {
+const [InNorsk, setInNorsk] = useState(false)
+const [InGrunnleggendeDatakunnskap, setInGrunnleggendeDatakunnskap] = useState(false)
+const [InHeimkunnskap, setInHeimkunnskap] = useState(false)
+const [InKroppsøving, setInKroppsøving] = useState(false)
 
+const joinNorsk = () =>{
+    setInNorsk(true)
+    console.log(InNorsk)
+}
+const joinGrunnleggendeDatakunnskap = () =>{
+    setInGrunnleggendeDatakunnskap(true)
+    console.log(InGrunnleggendeDatakunnskap)
+}
+const joinHeimkunnskap = () =>{
+    setInHeimkunnskap(true)
+    console.log(InHeimkunnskap)
+}
+const joinKroppsøving = () =>{
+    setInKroppsøving(true)
+    console.log(InKroppsøving)
+}
+const test = () => {
+    console.log("is in Norsk:",InNorsk)
+    console.log("is in grunnlegende datakunnskap:", InGrunnleggendeDatakunnskap)
+    console.log("is in heimkunnskap:", InHeimkunnskap)
+    console.log("is in kroppsøving:",InKroppsøving)
 }
 
 return(
     <div className='hjem'>
         <header>
-            <button id='loggInKnapp' onClick={() => navigate('./login')}> Logg in </button>
+            <img src='https://silsur1.github.io/images/profile-image.jpg' alt='profil bilde'/>
         </header>
 
         <div className='main'>
 
             <div className='dineKurs'>
                 <div className='nameOfBox'>
-                   <p>dine kurs</p> 
+                   <p>Dine kurs</p> 
                 </div>
 
                 <div className='kursNorsk'>
-                    <p>norsk</p>
+                    <p>Norsk</p>
                 </div> {/*slutt kursNorsk*/}
 
                 <div className='kursGrunnleggende_datakunnskap'>
@@ -51,20 +73,21 @@ return(
 
                 <div className='nameOfBox'>
                     <p>tilgjengelige Kurs</p>
+                    <button onClick={test}>check</button>
                 </div>
 
 
                 <div className='lines'>
                     <div className='kursNorsk'>
-                        <p>norsk</p>
+                        <p>Norsk</p>
 
-                        <button>Bli med!</button>
+                        <button onClick={joinNorsk}>Bli med!</button>
                     </div> {/*slutt kursNorsk*/}
 
                     <div className='kursGrunnleggende_datakunnskap'>
                         <p>Grunnleggende_datakunnskap</p>
 
-                        <button>Bli med!</button>
+                        <button onClick={joinGrunnleggendeDatakunnskap}>Bli med!</button>
                     </div> {/*slutt kursGrunnleggende_datakunnskap*/}
                 </div>
 
@@ -72,13 +95,13 @@ return(
                     <div className='kursHeimkunnskap'>
                         <p>Heimkunnskap</p>
 
-                        <button>Bli med!</button>
+                        <button onClick={joinHeimkunnskap}>Bli med!</button>
                     </div> {/*slutt kursHeimkunnskap*/}
 
                     <div className='kursKroppsøving'>
                         <p>Kroppsøving</p>
 
-                        <button>Bli med!</button>
+                        <button onClick={joinKroppsøving}>Bli med!</button>
                     </div> {/*slutt kursKroppsøving*/}
                 </div>
 

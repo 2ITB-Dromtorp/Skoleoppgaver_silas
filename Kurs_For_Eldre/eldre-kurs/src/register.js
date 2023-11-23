@@ -45,8 +45,8 @@ export default function Register({setPassord, setEpost}) {
         <label>
                 passord: <input type='password' value={InPassword} onChange={change2}/> 
         </label>
-
-        <p onClick={() => navigate(-1)}>Har du allerede bruker? Logg in!</p>
+        <br/>
+        <button onClick={() => navigate(-1)}>Har du allerede bruker? Logg in!</button>
 
         <p> {ErrorMes} </p>
         <button onClick={registrer}> registrer deg </button>

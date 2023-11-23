@@ -38,7 +38,16 @@
 }
 
 button{
+  border: black solid 0px;
   background-color: #E6BB68;
+  border-radius: 20px;
+}
+
+header button{
+  border: black solid 0px;
+  background-color: #E6BB68;
+  height: 30px;
+  border-radius: 20px;
 }
 
 div, header{
@@ -49,8 +58,13 @@ header{
   display: flex;
   background-color: #E5E5E5;
   height: 50px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   justify-content: right;
+  align-content: center;
+}
+
+header img{
+  width: 100px;
 }
 
 .hjem{
@@ -70,6 +84,8 @@ header{
   display: flex;
   flex-direction: column;
   justify-content:flex-start;
+  height: fit-content;
+  width: 720px;
 }
 
 .lines{
@@ -85,15 +101,19 @@ header{
   display: flex;
   flex-direction: column;
   align-content: space-around;
+  width: 340px;
 }
 
 .kursNorsk, .kursGrunnleggende_datakunnskap, .kursHeimkunnskap, .kursKroppsøving{
+  color: white;
   background-color: #858585;
   width: 300px;
+  border-radius: 20px;
   height: 150px;
   margin: 15px;
 }
 
 .nameOfBox{
   background-color: #E0E0E0;
+  text-align: center;
 }

@@ -5,16 +5,25 @@ import Login from './login';
 import Home from './home';
 import Register from './register';
 import { useState } from 'react';
+import LoggedOut from './logged_out';
 
 function App() {
 
   const [Epost, setEpost] = useState("");
   const [Passord, setPassord] = useState("");
-  const [IsLogedIn, setIsLogedIn] = useState(false);
+  const [IsLoggedIn, setIsLoggedIn] = useState(false);
+  let homePage;
+
+
+  if (IsLoggedIn == true) {
+    homePage = <Home />;
+  } else {
+    homePage = <LoggedOut />;
+  }
 
   function setPass() {
 
-  console.log("epost:", Epost, "passord:", Passord, "er logget in?:", IsLogedIn)
+  console.log("epost:", Epost, "passord:", Passord, "er logget in?:", IsLoggedIn)
   }
   
   return (
@@ -24,12 +33,12 @@ function App() {
 
     <>
 
-      <button onClick={setPass}>er logget in?</button>
+     {/*<button onClick={setPass}>er logget in?</button>*/} 
 
        <Routes>
-          <Route path="/" element={<Home IsLogedIn={IsLogedIn} />} />
+          <Route path="/" element={homePage } />
           <Route path="/Login/Register" element={<Register setEpost={setEpost} setPassord={setPassord} />} />
-          <Route path="/Login" element={<Login Passord={Passord} Epost={Epost} setIsLogedIn={setIsLogedIn}/>} />
+          <Route path="/Login" element={<Login Passord={Passord} Epost={Epost} setIsLogedIn={setIsLoggedIn}/>} />
 
           
        </Routes>
