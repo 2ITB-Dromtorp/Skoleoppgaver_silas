@@ -29,8 +29,6 @@ function App() {
   return (
 
 
-    
-
     <>
 
      {/*<button onClick={setPass}>er logget in?</button>*/} 

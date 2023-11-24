@@ -105,6 +105,9 @@ header img{
 }
 
 .kursNorsk, .kursGrunnleggende_datakunnskap, .kursHeimkunnskap, .kursKroppsøving{
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
   color: white;
   background-color: #858585;
   width: 300px;

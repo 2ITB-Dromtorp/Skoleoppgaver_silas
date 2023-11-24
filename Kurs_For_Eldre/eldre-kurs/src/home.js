@@ -7,34 +7,33 @@ import Login from './login';
 import DineKurs from './dineKurs';
 import TilgjengeligeKurs from './tilgjengeligeKurs';
 
-export default function Home({IsLoggedIn}) {
+export default function Home() {
 
 const navigate = useNavigate();
-
-const [InNorsk, setInNorsk] = useState(false)
-const [InGrunnleggendeDatakunnskap, setInGrunnleggendeDatakunnskap] = useState(false)
-const [InHeimkunnskap, setInHeimkunnskap] = useState(false)
-const [InKroppsøving, setInKroppsøving] = useState(false)
 
 const [Kurs, setKurs] = useState([
     {
         id: 1,
         kurs:'Norsk',
+        tid: '08:10-09:55',
         status:'TilgjengeligeKurs'
     },
     {
         id: 2,
-        kurs:'GrunnleggendeDatakunnskap',
+        kurs:'Grunnleggende Datakunnskap',
+        tid: '10:00-11:30',
         status:'TilgjengeligeKurs'
     },
     {
         id: 3,
         kurs:'Heimkunnskap',
+        tid: '12:00-12:45',
         status:'TilgjengeligeKurs'
     },
     {
         id: 4,
         kurs:'Kroppsøving',
+        tid: '12:50-14:25',
         status:'TilgjengeligeKurs'
     }
 ])
@@ -51,6 +50,8 @@ const updateStatus=(id,newStatus)=>{
     setKurs(allKurs)
 }
 
+
+
 return(
     <div className='hjem'>
         <header>
@@ -61,70 +62,6 @@ return(
 
             <DineKurs Kurs={Kurs} setKurs={setKurs} updateStatus={updateStatus}/>
             <TilgjengeligeKurs Kurs={Kurs} setKurs={setKurs} updateStatus={updateStatus}/>
-
-{/*
-            <div className='dineKurs'>
-                <div className='nameOfBox'>
-                   <p>Dine kurs</p> 
-                </div>
-
-                <div className='kursNorsk'>
-                    <p>Norsk</p>
-                </div> {/*slutt kursNorsk}
-
-                <div className='kursGrunnleggende_datakunnskap'>
-                    <p>Grunnleggende datakunnskap</p>
-                </div> {/*slutt kursGrunnleggende_datakunnskap}
-
-                <div className='kursHeimkunnskap'>
-                    <p>Heimkunnskap</p>
-                </div> {/*slutt kursHeimkunnskap}
-
-                <div className='kursKroppsøving'>
-                    <p>Kroppsøving</p> 
-                </div> {/*slutt kursKroppsøving}
-            </div> {/*slutt dineKurs}
-
-
-
-            <div className='tilgjengeligeKurs'>
-
-                <div className='nameOfBox'>
-                    <p>tilgjengelige Kurs</p>
-                    <button>check</button>
-                </div>
-
-
-                <div className='lines'>
-                    <div className='kursNorsk'>
-                        <p>Norsk</p>
-
-                        <button>Bli med!</button>
-                    </div> {/*slutt kursNorsk}
-
-                    <div className='kursGrunnleggende_datakunnskap'>
-                        <p>Grunnleggende datakunnskap</p>
-
-                        <button>Bli med!</button>
-                    </div> {/*slutt kursGrunnleggende_datakunnskap}
-                </div>
-
-                <div className='lines'>
-                    <div className='kursHeimkunnskap'>
-                        <p>Heimkunnskap</p>
-
-                        <button>Bli med!</button>
-                    </div> {/*slutt kursHeimkunnskap}
-
-                    <div className='kursKroppsøving'>
-                        <p>Kroppsøving</p>
-
-                        <button>Bli med!</button>
-                    </div> {/*slutt kursKroppsøving}
-                </div>
-
-            </div> {/*slutt tilgjengeligeKurs}
-*/}
 
         </div>
 
