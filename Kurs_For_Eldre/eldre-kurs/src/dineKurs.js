@@ -3,6 +3,7 @@ import Popup from './comp/popup'
 import Kvitering from './comp/kvitering';
 import { useState } from 'react';
 
+
 export default function DineKurs({Kurs, setKurs, updateStatus}){
 
     const [ButtonPopup, setButtonPopup] = useState(false);
@@ -33,10 +34,12 @@ export default function DineKurs({Kurs, setKurs, updateStatus}){
                         if(Kurs && Kurs.status==='DineKurs')
                         return <>
                             <div className='kursNorsk'>
+                                {Kurs.img}
                                 <p className="main" key={Kurs.id}>
                                     
-                                    {Kurs.kurs} <br/> {Kurs.tid} <button  className="mark_leave" key={Kurs.id} onClick={()=>{updateStatus(Kurs.id,'TilgjengeligeKurs')}}>avbestill kurs</button>
-                                </p>                            
+                                    {Kurs.kurs} <br/> {Kurs.tid} <br/> {Kurs.info} 
+                                </p> 
+                                <button  className="mark_leave" key={Kurs.id} onClick={()=>{updateStatus(Kurs.id,'TilgjengeligeKurs')}}>avbestill kurs</button>                           
                             </div>
 
                         </>
@@ -51,9 +54,10 @@ export default function DineKurs({Kurs, setKurs, updateStatus}){
                                 if(Kurs && Kurs.status==='DineKurs')
                                 return <>
                                     <div className='kursNorsk'>
+                                        {Kurs.img} 
                                         <p className="main" key={Kurs.id}>
                                             
-                                            {Kurs.kurs} <br/> {Kurs.tid}
+                                        {Kurs.kurs} <br/> {Kurs.tid}
                                         </p>                            
                                     </div>
 
@@ -75,9 +79,10 @@ export default function DineKurs({Kurs, setKurs, updateStatus}){
                             if(Kurs && Kurs.status==='DineKurs')
                             return <>
                                 <div className='kursNorsk'>
+                                    {Kurs.img}
                                     <p className="main" key={Kurs.id}>
                                         
-                                        {Kurs.kurs} <br/> {Kurs.tid}
+                                    {Kurs.kurs} <br/> {Kurs.tid}
                                     </p>                            
                                 </div>
 

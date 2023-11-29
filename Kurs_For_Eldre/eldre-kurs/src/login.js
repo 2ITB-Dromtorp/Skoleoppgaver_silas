@@ -1,4 +1,5 @@
-import './App.css';
+import './login.css';
+import './login.css';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -41,21 +42,28 @@ export default function Login({Passord, Epost, setIsLogedIn}) {
     
 
     return(
-    <div>
+    <div className='outBox'>
 
-        <h1>logg in</h1>
+        <div className='loginBox'>
+            <h1>Logg in!</h1>
 
-        <label>
-                epost: <input type='email' value={InEmail} onChange={change1}/> 
-        </label>
-        <label>
-                passord: <input type='password' value={InPassword} onChange={change2}/> 
-        </label>
-        <br/>
-        <button onClick={() => navigate('./register')}>Har du ikke en bruker? Registrer deg!</button>
-    
-        <p> {ErrorMes} </p>
-        <button onClick={loggIn}> Logg in </button>
+            <label>
+                    epost: <br/> <input type='email' value={InEmail} onChange={change1}/> 
+            </label>
+            <label>
+                    passord: <br/> <input type='password' value={InPassword} onChange={change2}/> 
+            </label>
+            <br/>
+            <button onClick={loggIn}> Logg in </button> 
+            <br/>             
+            <a onClick={() => navigate('./register')}>Har du ikke en bruker? Registrer deg!</a>
+        
+            <p> {ErrorMes} </p>
+          
+            <img src='https://silsur1.github.io/images/Freddy_fazbear_by_monsuirahab-d898wex.webp' className='freddyFazbear'/>
+        </div>
+
+
 
     </div>
 

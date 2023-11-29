@@ -1,0 +1,43 @@
+.outBox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 32px;
+    width: 100%;
+    max-width: 640px;
+    background-color: #E5E5E5;
+}
+
+input{
+    width: 300px;
+    height: 20px;
+}
+
+.loginBox button{
+    width: 125px;
+    height: 35px;
+}
+
+.freddyFazbear{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    width: 5px;
+    height: 5px;
+}

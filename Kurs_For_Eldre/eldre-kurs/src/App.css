@@ -58,13 +58,14 @@ header{
   display: flex;
   background-color: #E5E5E5;
   height: 50px;
-  margin-bottom: 30px;
-  justify-content: right;
+
+  justify-content: space-between;
   align-content: center;
 }
 
 header img{
   width: 100px;
+  border-radius: 100%;
 }
 
 .hjem{

@@ -13,6 +13,7 @@ const navigate = useNavigate();
 return(
     <div className='hjem'>
         <header>
+            <h1>Opplæring av godt voksene</h1>
             <button id='loggInKnapp' onClick={() => navigate('./login')}> Logg in </button>
         </header>
 
@@ -20,7 +21,7 @@ return(
 
             <div className='dineKurs'>
                 <div className='nameOfBox'>
-                   <p>dine kurs</p> 
+                   <p>Dine kurs</p> 
                 </div>
             </div> {/*slutt dineKurs*/}
 
@@ -29,13 +30,13 @@ return(
             <div className='tilgjengeligeKurs'>
 
                 <div className='nameOfBox'>
-                    <p>tilgjengelige Kurs</p>
+                    <p>Tilgjengelige kurs</p>
                 </div>
 
 
                 <div className='lines'>
                     <div className='kursNorsk'>
-                        <p>logg in for å se tilgjengelige kurs</p>
+                        <p>Logg in for å se tilgjengelige kurs</p>
 
                         <button id='loggInKnapp' onClick={() => navigate('./login')}> Logg in </button>
                     </div> {/*slutt kursNorsk*/}
