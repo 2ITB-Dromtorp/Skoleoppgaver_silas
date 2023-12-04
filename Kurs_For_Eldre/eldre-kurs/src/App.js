@@ -16,7 +16,7 @@ function App() {
 
 
   if (IsLoggedIn == true) {
-    homePage = <Home />;
+    homePage = <Home setIsLogedIn={setIsLoggedIn}/>;
   } else {
     homePage = <LoggedOut />;
   }
@@ -34,7 +34,7 @@ function App() {
      {/*<button onClick={setPass}>er logget in?</button>*/} 
 
        <Routes>
-          <Route path="/" element={homePage} />
+          <Route path="/" element={homePage } />
           <Route path="/Login/Register" element={<Register setEpost={setEpost} setPassord={setPassord}/>} />
           <Route path="/Login" element={<Login Passord={Passord} Epost={Epost} setIsLogedIn={setIsLoggedIn}/>} />
 

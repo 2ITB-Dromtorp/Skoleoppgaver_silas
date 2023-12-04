@@ -11,7 +11,7 @@ import { FaKitchenSet } from "react-icons/fa6";
 import { RiSpeakLine } from "react-icons/ri";
 import { FaRunning } from "react-icons/fa";
 
-export default function Home() {
+export default function Home({setIsLogedIn}) {
 
 const navigate = useNavigate();
 
@@ -58,13 +58,15 @@ const updateStatus=(id,newStatus)=>{
     setKurs(allKurs)
 }
 
-
+function LogOut() {
+    setIsLogedIn(false)
+}
 
 return(
     <div className='hjem'>
         <header>
             <h1>Opplæring av godt voksene</h1>
-            <img src='https://silsur1.github.io/images/profile-image.jpg' alt='profil bilde'/>
+            <img src='https://silsur1.github.io/images/profile-image.jpg' alt='profil bilde' onClick={LogOut}/>
         </header>
         <div className='main'>
 
