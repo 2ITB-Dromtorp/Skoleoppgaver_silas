@@ -20,15 +20,27 @@ connection.connect(function(err) {
   console.log('connected as id ' + connection.threadId);
 });
  
-connection.query('SELECT * FROM elev', function (error, results, fields) {
-  if (error) throw error;
-  console.log('The solution is: ', results);
-});
- 
-connection.end();
-
 app.get('/', (req, res) => {
-  res.send('Hello World!!! I will destroy your sofa >:)')
+
+  connection.query('SELECT * FROM elev', function (error, results, fields) {
+    if (error) throw error;
+    res.send(JSON.stringify(results));
+  });
+  
+})
+
+app.get('/update/:newhobby/:id', (req, res) => {
+  let newhobby = req.params.newhobby;
+  let id = req.params.id;
+  console.log(newhobby);
+  let sqlquery = 'UPDATE elev SET hobby=? WHERE ElevID=?';
+
+  connection.query(sqlquery, [newhobby, id], function (error, results, fields) {
+    if (error) throw error;
+    res.send(JSON.stringify(results));
+  });
+
+  res.send('If This works, great!');
 })
 
 app.listen(port, () => {
