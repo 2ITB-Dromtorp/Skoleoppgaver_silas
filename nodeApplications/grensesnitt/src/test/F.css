@@ -1,0 +1,9 @@
+.Office{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 940px;
+    height: 480px;
+    background-image: url("https://silsur1.github.io/images/OfficeEmpty.webp");
+}
