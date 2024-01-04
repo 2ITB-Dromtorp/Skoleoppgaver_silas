@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 const port = 3000
 var mysql = require('mysql');
+var cors = require('cors')
+
+app.use(cors())
 
 var connection = mysql.createConnection({
   host     : 'localhost',
@@ -22,21 +25,23 @@ connection.connect(function(err) {
  
 app.get('/', (req, res) => {
 
-  connection.query('SELECT * FROM elev', function (error, results, fields) {
-    if (error) throw error;
+  connection.query('SELECT * FROM elev', function (err, results, fields) {
+    if (err) throw err;
     res.send(JSON.stringify(results));
   });
   
 })
 
-app.get('/update/:newhobby/:id', (req, res) => {
+app.get('/update/:field/:newhobby/:id', (req, res) => {
+  let field = req.params.field;
   let newhobby = req.params.newhobby;
   let id = req.params.id;
   console.log(newhobby);
-  let sqlquery = 'UPDATE elev SET hobby=? WHERE ElevID=?';
+  console.log(field)
+  let sqlquery = 'UPDATE elev SET ?=? WHERE ElevID=?';
 
-  connection.query(sqlquery, [newhobby, id], function (error, results, fields) {
-    if (error) throw error;
+  connection.query(sqlquery, [field ,newhobby, id], function (err, results, fields) {
+    if (err) throw err;
     res.send(JSON.stringify(results));
   });
 
@@ -45,4 +50,4 @@ app.get('/update/:newhobby/:id', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
-})
+}) 
