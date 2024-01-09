@@ -30,10 +30,10 @@ return(
                     <th>ElevID</th>
                     <th>Fornavn</th>
                     <th>Etternavn</th>
-                    <th>DatamaskinID</th>
-                    <th>Hobby</th>
                     <th>Klasse</th>
+                    <th>Hobby</th>
                     <th>Kjønn</th>
+                    <th>DatamaskinID</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,10 +42,10 @@ return(
                         <td>{elev.ElevID}</td>
                         <td>{elev.Fornavn}</td>
                         <td>{elev.Etternavn}</td>
-                        <td>{elev.DatamaskinID}</td>
-                        <td>{elev.Hobby}</td>
                         <td>{elev.Klasse}</td>
+                        <td>{elev.Hobby}</td>
                         <td>{elev.Kjonn}</td>
+                        <td>{elev.DatamaskinID}</td> 
                     </tr>
                 ))}
             </tbody>
