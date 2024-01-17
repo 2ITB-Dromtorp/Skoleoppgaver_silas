@@ -3,8 +3,10 @@ const app = express()
 const port = 3000
 var mysql = require('mysql');
 var cors = require('cors')
+var bodyParser = require('body-parser')
 
 app.use(cors())
+app.use(bodyParser.json())
 
 var connection = mysql.createConnection({
   host     : 'localhost',
@@ -49,6 +51,7 @@ app.get('/update/:field/:newhobby/:id', (req, res) => {
   });
 });
 
+/*
 app.get('/insert/:value1/:value2/:value3/:value4/:value5/:value6/:value7', (req, res) => {
   let value1 = req.params.value1
   let value2 = req.params.value2
@@ -75,16 +78,31 @@ app.get('/insert/:value1/:value2/:value3/:value4/:value5/:value6/:value7', (req,
     res.send(JSON.stringify(results));
   });
 });
+*/
 
-app.get('/delete/:value1', (req, res) => {
-  let value1 = req.params.value1
+app.post('/insert', async (req, res) => {
 
-  console.log(value1);
+    const { key1, key2, key3, key4, key5, key6, key7 } = req.body;
+    console.log('received values:', key1, key2 , key3, key4, key5, key6, key7);
+
+    let sqlquery = `INSERT INTO elev(ElevID, Fornavn, Etternavn, Klasse, Hobby, Kjonn, DatamaskinID) VALUES (?,?,?,?,?,?,?)`;
+
+    connection.query(sqlquery, [key1, key2, key3, key4, key5, key6, key7], (err, results, fields) => {
+      if (err) throw err;
+      console.log(sqlquery);
+      res.send(JSON.stringify(results));
+    });
+});
+
+app.get('/delete/:id', (req, res) => {
+  let id = req.params.id
+
+  console.log(id);
 
   // Corrected SQL query
   let sqlquery = `DELETE FROM elev WHERE ElevId = ?`;
 
-  connection.query(sqlquery, [value1], (err, results, fields) => {
+  connection.query(sqlquery, [id], (err, results, fields) => {
     if (err) throw err;
     console.log(sqlquery);
     res.send(JSON.stringify(results));
@@ -93,4 +111,4 @@ app.get('/delete/:value1', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
-}) 
+});

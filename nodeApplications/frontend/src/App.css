@@ -1,0 +1,86 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px;
+}
+
+.App-header{
+  background-color: #635D5C;
+  height: 120px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Info{
+  background-color: #D0FFCE;
+  width: 940px;
+  height: 480px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Info, .App-header{
+  border: solid black 1px;
+}
+
+button{
+  border: black solid 0px;
+  color: white;
+  background-color: #3D2B3D;
+
+  border: solid white 1px;
+  border-radius: 20px;
+  width: 225px;
+  height: 50px;
+  margin: 5px;
+}
+
+.table-container {
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px; /* Smaller padding */
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-container-insert {
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px; /* Smaller padding */
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1em; /* Adjust font size as needed */
+}
+
+.styled-table th, .styled-table td {
+  border: 1px solid #ddd;
+  padding: 6px; /* Smaller padding */
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+.insert{
+  width: 100px;
+}
+
+.table-container{
+  width: 800px;
+  height: 400px;
+}

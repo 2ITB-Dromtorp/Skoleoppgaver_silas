@@ -21,7 +21,7 @@ const getElevData = () => {
 }
 
 return(
-    <>
+    <div className='selectBox'>
     <div className="table-container">
         
         <table className="styled-table">
@@ -51,7 +51,7 @@ return(
             </tbody>
         </table>
     </div>
-    </>
+    </div>
 )
 
 }

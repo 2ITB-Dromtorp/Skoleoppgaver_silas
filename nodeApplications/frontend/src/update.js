@@ -19,7 +19,7 @@ const updateData = () => {
 
 const[InField, setInField] = useState("")
 const[InContent, setInContent] = useState("")
-const[InNum, setInNum] = useState(1)
+const[InNum, setInNum] = useState()
 
 const change1 = Event =>{
     setInField(Event.target.value)
@@ -37,7 +37,7 @@ const change4 = Event =>{
 
 return(
     <div className='hjem'>
-        UPDATE elev
+        Endre på et eksisterende felt.
         <br/>
         <label>
             hvilket felt du vil oppdatere <input type='text' value={InField} onChange={change1}/>
@@ -48,7 +48,7 @@ return(
         </label>
         <br/>
         <label>
-            hvor du vil endre det (elevID) <input type='number' value={InNum} onChange={change4}/>
+            hvilken rad vil du endre det på (elevID) <input type='number' value={InNum} onChange={change4}/>
         </label>
         <br/>
         <button onClick={updateData}> Update </button>

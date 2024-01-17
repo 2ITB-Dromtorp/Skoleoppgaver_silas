@@ -26,7 +26,7 @@ function App() {
       <Routes>
           <Route path="/" element={<Empty /> } />
           <Route path="/Select" element={<Select /> } />
-          <Route path="Update" element={<Update />} />
+          <Route path="/Update" element={<Update />} />
           <Route path="/Insert" element={<Insert />} />
           <Route path="/Delete" element={<Delete />} />
           <Route path="/F" element={<F /> } />

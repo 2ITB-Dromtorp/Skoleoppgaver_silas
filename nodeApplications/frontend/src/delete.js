@@ -27,10 +27,10 @@ const change1 = Event =>{
 
 return(
     <div className='hjem'>
-        DELETE from elev
+        Slett en rad.
         <br/>
         <label>
-            hvilken rad vil du slette (ElevID) <input type='number' value={Value1} onChange={change1}/>
+            Skriv in ElevID-en til raden du vil slette <input type='number' value={Value1} onChange={change1}/>
         </label>
         <br/>
         <button onClick={deleteData}> Delete </button>
