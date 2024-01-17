@@ -34,13 +34,30 @@ app.get('/', (req, res) => {
   
 })
 
-app.get('/update/:field/:newhobby/:id', (req, res) => {
+/*app.get('/update/:field/:newhobby/:id', (req, res) => {
   let field = req.params.field.replace(/^["'](.+(?=["']$))["']$/, '$1');
   let newhobby = req.params.newhobby;
   let id = req.params.id;
 
   console.log(newhobby);
   console.log(field);
+
+  // Corrected SQL query
+  let sqlquery = `UPDATE elev SET \`${field}\` = ? WHERE ElevID = ?`;
+
+  connection.query(sqlquery, [newhobby, id], (err, results, fields) => {
+    if (err) throw err;
+    res.send(JSON.stringify(results));
+  });
+});
+*/
+
+app.put('/update', (req, res) => {
+  // Access the data sent in the PUT request body
+  const {field, newhobby, id} = req.body;
+
+  // Handle the data as needed
+  console.log('Received Data:', field, newhobby, id);
 
   // Corrected SQL query
   let sqlquery = `UPDATE elev SET \`${field}\` = ? WHERE ElevID = ?`;
@@ -88,24 +105,31 @@ app.post('/insert', async (req, res) => {
     let sqlquery = `INSERT INTO elev(ElevID, Fornavn, Etternavn, Klasse, Hobby, Kjonn, DatamaskinID) VALUES (?,?,?,?,?,?,?)`;
 
     connection.query(sqlquery, [key1, key2, key3, key4, key5, key6, key7], (err, results, fields) => {
-      if (err) throw err;
+      if (err) {
+        console.error(err);
+        res.status(500).json({ message: 'Database error' });
+        return;
+      }
+
       console.log(sqlquery);
-      res.send(JSON.stringify(results));
+      res.status(200).send(JSON.stringify(results));
     });
 });
 
-app.get('/delete/:id', (req, res) => {
-  let id = req.params.id
-
-  console.log(id);
+app.delete('/delete/:id', (req, res) => {
+  const id = req.params.id;
 
   // Corrected SQL query
-  let sqlquery = `DELETE FROM elev WHERE ElevId = ?`;
+  const sqlQuery = 'DELETE FROM elev WHERE ElevId = ?';
 
-  connection.query(sqlquery, [id], (err, results, fields) => {
-    if (err) throw err;
-    console.log(sqlquery);
-    res.send(JSON.stringify(results));
+  connection.query(sqlQuery, [id], (err, results, fields) => {
+    if (err) {
+      console.error('Error executing SQL query:', err);
+      res.status(500).json({ error: 'Internal Server Error' });
+    } else {
+      console.log('SQL query executed successfully:', sqlQuery);
+      res.status(200).json({ message: 'Row deleted successfully' });
+    }
   });
 });
 

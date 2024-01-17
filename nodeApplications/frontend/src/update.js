@@ -9,12 +9,27 @@ export default function Update() {
 const navigate = useNavigate();
 
 const updateData = () => {
-    axios
+    /*axios
         .get(`http://localhost:3000/update/${InField}/${InContent}/${InNum}`)
         .then(response => {
             console.log(response.data)
         })
         .catch(error => console.log(error));
+        */
+
+
+        const url = 'http://localhost:3000/update';
+        const data = {
+             field: InField, newhobby: InContent, id: InNum 
+        };
+        
+        axios.put(url, data)
+          .then(response => {
+            console.log('Response:', response.data);
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
 }
 
 const[InField, setInField] = useState("")

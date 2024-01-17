@@ -6,10 +6,11 @@
   align-items: center;
 
   padding: 10px;
+  background-color: #172815;
 }
 
 .App-header{
-  background-color: #635D5C;
+  background-color: #3E5622;
   height: 120px;
 
   display: flex;
@@ -18,7 +19,7 @@
 }
 
 .Info{
-  background-color: #D0FFCE;
+  background-color: #709255;
   width: 940px;
   height: 480px;
 
@@ -34,7 +35,7 @@
 button{
   border: black solid 0px;
   color: white;
-  background-color: #3D2B3D;
+  background-color: #172815;
 
   border: solid white 1px;
   border-radius: 20px;
@@ -70,10 +71,10 @@ button{
 }
 
 .styled-table th, .styled-table td {
-  border: 1px solid #ddd;
+  border: 1.5px solid #3E5622;
   padding: 6px; /* Smaller padding */
   text-align: center;
-  background-color: #f2f2f2;
+  background-color: #95B46A;
 }
 
 .insert{

@@ -9,12 +9,23 @@ export default function Update() {
 const navigate = useNavigate();
 
 const deleteData = () => {
+    /*
     axios
         .get(`http://localhost:3000/delete/${Value1}/`)
         .then(response => {
             console.log(response.data)
         })
         .catch(error => console.log(error));
+    */
+        const endpoint = 'http://localhost:3000/delete';
+        
+        axios.delete(`${endpoint}/${Value1}`)
+          .then(response => {
+            console.log('Row deleted successfully:', response.data);
+          })
+          .catch(error => {
+            console.error('Error deleting row:', error);
+          });
 }
 
 const[Value1, setInValue1] = useState()
