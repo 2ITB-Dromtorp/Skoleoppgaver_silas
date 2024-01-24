@@ -1,48 +1,41 @@
 import './App.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import catimg from './images/Brown_spotted_tabby_bengal_cat_2.png'
+import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
+import Youlikecats from './YouLikeCats';
+import LoggedOut from './loggedOut';
+import Login from './login';
+import Register from './register';
 
 function App() {
 
-  const [Num, setNum] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
+  const [Username, setUsername] = useState("greg");
+  const [Passord, setPassord] = useState("hotdog");
+  const [IsLoggedIn, setIsLoggedIn] = useState(false);
+  let homePage;
 
-
-  useEffect(() => {
-    const storedVisibility = localStorage.getItem('buttonVisibility');
-    if (storedVisibility) {
-      setIsVisible(JSON.parse(storedVisibility));
-    }
-  }, []);
-
-  function countUp() {
-    setNum(Num+1)
-    setIsVisible(false);
-    localStorage.setItem('buttonVisibility', JSON.stringify(false));
+  if (IsLoggedIn == true) {
+    homePage = <Youlikecats setIsLogedIn={setIsLoggedIn} Username={Username}/>;
+  } else {
+    homePage = <LoggedOut />;
   }
 
-  function Fix() {
-    setIsVisible(true);
-    localStorage.setItem('buttonVisibility', JSON.stringify(true));
+  function checkLogin() {
+  console.log("Username:", Username, "passord:", Passord, "er logget in?:", IsLoggedIn)
   }
-
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={catimg} className="App-logo" alt="cat" />
-        <p>
-          number of people who like cats: {Num} 
-        </p>
-        {isVisible && (
-        <button onClick={countUp}>
-          click me if you like cats!
-        </button>
-      )}
-      <button onClick={Fix}> fix </button>
-      </header>
-    </div>
+    <Router>
+    <>
+       <Routes>
+          <Route path="/" element={homePage } />
+          <Route path="/Login/Register" element={<Register setUsername={setUsername} setPassord={setPassord}/>} />
+          <Route path="/Login" element={<Login Passord={Passord} Username={Username} setIsLogedIn={setIsLoggedIn}/>} />
+        </Routes>
+
+
+    </>
+    </Router>
   );
 }
 

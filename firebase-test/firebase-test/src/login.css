@@ -1,0 +1,41 @@
+.outBox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color:color-mix(in srgb, #FFC15E 25%, #F7934C 75%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 32px;
+    width: 100%;
+    max-width: 640px;
+    background-color: #F7B05B;
+    border: dotted #CC5803 2px;
+    border-radius: 30px;
+}
+
+input{
+    width: 300px;
+    height: 20px;
+    border: solid #CC5803 2px;
+    border-radius: 10px;
+
+    background-color: #FFC15E;
+    color: #1F1300;
+}
+
+.loginBox button{
+    width: 125px;
+    height: 35px;
+}
