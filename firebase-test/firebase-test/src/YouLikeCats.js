@@ -1,16 +1,15 @@
 import './App.css';
 import { useState } from 'react';
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Routes, Route } from 'react-router-dom';
-import catimg from './images/Brown_spotted_tabby_bengal_cat_2.png'
+import catimg from './images/plomm-smaller.png'
 
-export default function Youlikecats({Username, setIsLogedIn}) {
+export default function Youlikecats({Username, setIsLogedIn, Num, setNum, Person, setperson}) {
 
     const navigate = useNavigate();
-
+/*
   const [Num, setNum] = useState(0);
   const [Person, setperson] = useState("");
+*/
   const [isVisible, setIsVisible] = useState(true);
 
   

@@ -1,8 +1,6 @@
 import './App.css';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import catimg from './images/Brown_spotted_tabby_bengal_cat_2.png'
+import catimg from './images/plomm-smaller.png'
 
 
 export default function LoggedOut() {

@@ -1,40 +1,49 @@
+// app.js
 import './App.css';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
+import { auth } from './firebase'; // Import your Firebase auth instance
 import Youlikecats from './YouLikeCats';
 import LoggedOut from './loggedOut';
 import Login from './login';
 import Register from './register';
 
 function App() {
-
-  const [Username, setUsername] = useState("greg");
-  const [Passord, setPassord] = useState("hotdog");
   const [IsLoggedIn, setIsLoggedIn] = useState(false);
-  let homePage;
+  const [Num, setNum] = useState(0);
 
-  if (IsLoggedIn == true) {
-    homePage = <Youlikecats setIsLogedIn={setIsLoggedIn} Username={Username}/>;
-  } else {
-    homePage = <LoggedOut />;
-  }
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setIsLoggedIn(!!user);
+    });
 
-  function checkLogin() {
-  console.log("Username:", Username, "passord:", Passord, "er logget in?:", IsLoggedIn)
-  }
+    return () => unsubscribe();
+  }, []);
 
   return (
     <Router>
-    <>
-       <Routes>
-          <Route path="/" element={homePage } />
-          <Route path="/Login/Register" element={<Register setUsername={setUsername} setPassord={setPassord}/>} />
-          <Route path="/Login" element={<Login Passord={Passord} Username={Username} setIsLogedIn={setIsLoggedIn}/>} />
+      <>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              IsLoggedIn ? (
+                <Youlikecats setIsLogedIn={setIsLoggedIn} Num={Num} setNum={setNum}/>
+              ) : (
+                <LoggedOut />
+              )
+            }
+          />
+          <Route
+            path="/Login/Register"
+            element={<Register />}
+          />
+          <Route
+            path="/Login"
+            element={<Login setIsLogedIn={setIsLoggedIn} />}
+          />
         </Routes>
-
-
-    </>
+      </>
     </Router>
   );
 }
