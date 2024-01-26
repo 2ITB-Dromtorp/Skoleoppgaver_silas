@@ -17,7 +17,7 @@ const deleteData = () => {
         })
         .catch(error => console.log(error));
     */
-        const endpoint = 'http://localhost:3000/delete';
+        const endpoint = '/delete';
         
         axios.delete(`${endpoint}/${Value1}`)
           .then(response => {

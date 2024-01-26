@@ -22,7 +22,7 @@ async function insertData() {
   };
  
   try {
-    const response = await fetch('http://localhost:3000/insert', {
+    const response = await fetch('/insert', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

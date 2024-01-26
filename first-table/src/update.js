@@ -18,7 +18,7 @@ const updateData = () => {
         */
 
 
-        const url = 'http://localhost:3000/update';
+        const url = '/update';
         const data = {
              field: InField, newhobby: InContent, id: InNum 
         };

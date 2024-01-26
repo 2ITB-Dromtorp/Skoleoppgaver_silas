@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 8080
 var mysql = require('mysql');
 var cors = require('cors')
 var bodyParser = require('body-parser')
@@ -135,4 +135,8 @@ app.delete('/delete/:id', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
+
+  app.get("*", (req, res) => {
+    res.sendFile("build")
+  })
 });

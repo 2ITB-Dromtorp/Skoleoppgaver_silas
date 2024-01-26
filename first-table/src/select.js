@@ -13,7 +13,7 @@ useEffect(() => {
 
 const getElevData = () => {
         axios
-            .get("http://localhost:3000/")
+            .get("/")
             .then(response => {
                 setElevData(response.data);
             })
