@@ -5,6 +5,7 @@ import { useState } from 'react';
 function App() {
 
   const [HurHurHur, setHurHurHur] = useState("")
+  const [isVisible, setIsVisible] = useState(false);
 
   function relative() {
     fetch("/api/get").then(async (res) => {
@@ -12,6 +13,7 @@ function App() {
     }).then((data) => {
       console.log(data.message)
       setHurHurHur(data.message)
+      setIsVisible(true)
     })
   }
 
@@ -19,7 +21,10 @@ function App() {
     <div className="App">
       <button onClick={() => relative()}>Freddy fazbear</button>
       <p> {HurHurHur} </p>
-      <img src={freddyimg} alt='freddy fazbear'/>
+      {isVisible &&(
+        <img src={freddyimg} alt='freddy fazbear'/>        
+      )}
+
     </div>
   );
 }
