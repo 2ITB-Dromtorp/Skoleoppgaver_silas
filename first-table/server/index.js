@@ -7,6 +7,7 @@ var bodyParser = require('body-parser')
 
 app.use(cors())
 app.use(bodyParser.json())
+app.use(express.static("build"));
 
 var connection = mysql.createConnection({
   host     : 'localhost',
