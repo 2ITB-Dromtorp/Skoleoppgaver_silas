@@ -1,0 +1,31 @@
+{
+    "questions":[
+        {
+            "question": "Hvordan kan du lage en variabel",
+            "answerOptions": [
+                { "answerText": "const", "isCorrect": true },
+                { "answerText": "let", "isCorrect": true },
+                { "answerText": "new", "isCorrect": false },
+                { "answerText": "var", "isCorrect": true }
+            ]
+        },
+        {
+            "question": "hvilket kode språk brukes få å endre på utsene til en nettside",
+            "answerOptions": [
+                {"answerText": "html", "isCorrect": false},
+                {"answerText": "c#", "isCorrect": false},
+                {"answerText": "css", "isCorrect": true},
+                {"answerText": "javascript", "isCorrect": false}
+            ]
+        },
+        {
+            "question": "hva er komandoen for å lage en ny mappe i terminalen",
+            "answerOptions": [
+                { "answerText": "mkdir", "isCorrect": true },
+                { "answerText": "cd", "isCorrect": false },
+                { "answerText": "ls", "isCorrect": false },
+                { "answerText": "del", "isCorrect": false }
+            ]
+        }    
+    ]
+}
