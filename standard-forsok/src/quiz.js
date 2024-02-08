@@ -45,7 +45,7 @@ export default function Quiz() {
             console.log(selectedIndex)
             
             axios
-                .get(`http://localhost:8080/check/${selectedIndex}`)
+                .get(`/check/${selectedIndex}`)
                 .then(response => {
                 console.log(response.data);
                 setCurrentQuestions(response.data.currentQuestion)
