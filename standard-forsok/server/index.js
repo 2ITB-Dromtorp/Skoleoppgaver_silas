@@ -63,7 +63,7 @@ app.listen(port, () => {
     })
     app.get("*", (req, res) => {
         res.sendFile("build")
-    })
+      })
 
     console.log("i am alive")
     console.log("Server is running on port", port);
