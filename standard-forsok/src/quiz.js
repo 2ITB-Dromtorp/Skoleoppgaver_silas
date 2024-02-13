@@ -67,7 +67,7 @@ export default function Quiz() {
             setIsVisible(true)
 
             axios
-            .get(`http://localhost:8080/retry`)
+            .get(`/retry`)
             .then(response => {
             console.log(response.data);
             setCurrentQuestions(response.data.currentQuestionR)
