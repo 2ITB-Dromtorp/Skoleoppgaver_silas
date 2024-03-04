@@ -2,7 +2,7 @@
 
 .App {
   text-align: center;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   background-color: #f4f4f4;
@@ -22,9 +22,9 @@ p {
 button {
   background-color: #4caf50;
   color: #fff;
-  padding: 10px 20px;
+  padding: 15px 25px;
   font-size: 16px;
-  margin: 10px;
+  margin: 15px;
   cursor: pointer;
   border: none;
   border-radius: 5px;
@@ -42,4 +42,13 @@ button + button {
 .score-section{
   display: flex;
   flex-direction: column;
+}
+
+.answerBtn{
+  display: flex;
+  flex-direction: column;
+}
+
+.questionBox{
+  height: 85px;
 }

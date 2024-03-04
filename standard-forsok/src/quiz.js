@@ -1,7 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import Questions from './questions';
-import axios from 'axios';
 
 
 export default function Quiz() {
@@ -19,7 +18,7 @@ export default function Quiz() {
         useEffect(() => {
             const timer = setInterval(() => {
               if (seconds > 0 && !isGameOver) {
-                setSeconds(prevSeconds => prevSeconds - 1);
+                setSeconds(seconds - 1);
               } else {
                 // Timer has run out, trigger game over
                 setIsGameOver(true);
@@ -39,25 +38,40 @@ export default function Quiz() {
             return () => clearInterval(timer);
         }, [seconds, isGameOver]);
 
-        const handleBtnclick = (selectedOption) => {
-            console.log(selectedOption)
+        const handleBtnclick = async (selectedOption) => {
             const selectedIndex = Questions[CurrentQuestions].answerOptions.indexOf(selectedOption);
-            console.log(selectedIndex)
+
+            /*
+              selectedIndex finner ut hvilken rad svaret er på
+              viss spilleren svarte html så finner selectedIndex at html er 0 med bruk av indexOf(html)
+
+              question: "hvilket kode språk brukes få å endre på utsene til en nettside",
+              answerOptions: [
+              0  {answerText: "html"},
+              1  {answerText: "c#"},
+              2  {answerText: "css"},
+              3  {answerText: "javascript"}
+            */
             
-            axios
-                .get(`/check/${selectedIndex}`)
-                .then(response => {
-                console.log(response.data);
-                setCurrentQuestions(response.data.currentQuestion)
-                setTotal(response.data.Total)
-                setShowScore(response.data.ShowScore)
-                setSeconds(10)
+            fetch(`http://localhost:8080/check/${selectedIndex}`)
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+              return response.json();
             })
-                .catch(error => console.log(error));
+            .then(data => {
+              console.log(data);
+              setCurrentQuestions(data.currentQuestion);
+              setTotal(data.Total);
+              setShowScore(data.ShowScore);
+              setSeconds(10);
+            })
+            .catch(error => console.error('There was a problem with the fetch operation:', error));
             
         }
 
-        const retry = () => {
+        const retry = async () => {
             setSeconds(10);
             setShowScore(false)
             setCurrentQuestions(0)
@@ -66,15 +80,20 @@ export default function Quiz() {
             setTotal(0)
             setIsVisible(true)
 
-            axios
-            .get(`/retry`)
+            fetch('http://localhost:8080/retry')
             .then(response => {
-            console.log(response.data);
-            setCurrentQuestions(response.data.currentQuestionR)
-            setTotal(response.data.TotalR)
-            setShowScore(response.data.ShowScoreR)
-        })
-            .catch(error => console.log(error));
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+              return response.json();
+            })
+            .then(data => {
+              console.log(data);
+              setCurrentQuestions(data.currentQuestionR);
+              setTotal(data.TotalR);
+              setShowScore(data.ShowScoreR);
+            })
+            .catch(error => console.error('There was a problem with the fetch operation:', error));
         }
 
 
@@ -84,17 +103,17 @@ export default function Quiz() {
                 {ShowScore ? (
 				    <div className='score-section'>
                         {isVisible &&(
-                            <p>forrige gang fikk du {LastTotal} av 3</p>                            
+                            <p>forrige gang fikk du {LastTotal} av {Questions.length}</p>                            
                         )}
 
-                        <p>Du svarte riktig på {Total} av 3</p>
+                        <p>Du svarte riktig på {Total} av {Questions.length}</p>
                         <button className='retry' onClick={retry}>start på nytt</button>
                     </div>
 			    ) : (
 				<>
                     <div className='questionInfo'>
                         <h2>{seconds}s</h2>                
-                        <span>spørsmål {CurrentQuestions+1}</span>/3            
+                        <span>spørsmål {CurrentQuestions+1}</span>/{Questions.length}            
                     </div>
 
                     <div className='questionBox'>

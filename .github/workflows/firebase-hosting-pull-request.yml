@@ -13,5 +13,5 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACT_PROJECT_TEST_E1764 }}'
-          projectId: react-project-test-e1764
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_QUIZ_A8083 }}'
+          projectId: quiz-a8083

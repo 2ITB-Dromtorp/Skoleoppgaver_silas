@@ -12,7 +12,7 @@ export default function Hurhur() {
   const [isVisible, setIsVisible] = useState(false);
 
   function relative() {
-    fetch("/api/get").then(async (res) => {
+    fetch("http://mulighet.no:8080/api/get").then(async (res) => {
       return res.json()
     }).then((data) => {
       console.log(data.message)

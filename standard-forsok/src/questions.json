@@ -26,6 +26,69 @@
                 { "answerText": "ls", "isCorrect": false },
                 { "answerText": "del", "isCorrect": false }
             ]
-        }    
+        },
+        {
+            "question": "Hva er formålet med IT-drift?",
+            "answerOptions": [
+                { "answerText": "Utvikle nye programvareløsninger", "isCorrect": false },
+                { "answerText": "Sikre stabil og effektiv drift av IT-systemer", "isCorrect": true },
+                { "answerText": "Administrere prosjektledelsen", "isCorrect": false },
+                { "answerText": "Skrive kode for nettleserapplikasjoner", "isCorrect": false }
+            ]
+        },
+        {
+            "question": "Hva er hovedfokuset til IT-utvikling?",
+            "answerOptions": [
+                { "answerText": "Administrere serverinfrastruktur", "isCorrect": false },
+                { "answerText": "Sikkerhetsanalyse", "isCorrect": false },
+                { "answerText": "Utvikle og forbedre programvareløsninger", "isCorrect": true },
+                { "answerText": "Implementere nettverksprotokoller", "isCorrect": false }
+            ]
+        },
+        {
+            "question": "Hvilken av følgende er en viktig oppgave innen IT-drift?",
+            "answerOptions": [
+                { "answerText": "Kodeskriving", "isCorrect": false },
+                { "answerText": "Kundebehandling", "isCorrect": false },
+                { "answerText": "Feilsøking og systemovervåking", "isCorrect": true },
+                { "answerText": "Grafisk design", "isCorrect": false }
+            ]
+        },
+        {
+            "question": "Hva er en vanlig metodikk brukt i IT-utvikling?",
+            "answerOptions": [
+                { "answerText": "ITIL (Information Technology Infrastructure Library)", "isCorrect": false },
+                { "answerText": "PRINCE2", "isCorrect": false },
+                { "answerText": "Six Sigma", "isCorrect": false },
+                { "answerText": "Agile", "isCorrect": true }
+            ]
+        },
+        {
+            "question": "Hvilken av følgende er et viktig prinsipp innen IT-drift?",
+            "answerOptions": [
+                { "answerText": "Minimum Viable Product (MVP)", "isCorrect": false },
+                { "answerText": "Redundans og sikkerhetskopiering", "isCorrect": true },
+                { "answerText": "Kanban", "isCorrect": false },
+                { "answerText": "Prosessforbedring", "isCorrect": false }
+            ]
+        },
+        {
+            "question": "Hvilken av følgende er en viktig teknologi innen IT-utvikling?",
+            "answerOptions": [
+                { "answerText": "Kubernetes", "isCorrect": true },
+                { "answerText": "DNS (Domain Name System)", "isCorrect": false },
+                { "answerText": "HTTP (Hypertext Transfer Protocol)", "isCorrect": false },
+                { "answerText": "VPN (Virtual Private Network)", "isCorrect": false }
+            ]
+        },
+        {
+            "question": "Hvilken av følgende er et mål for IT-drift?",
+            "answerOptions": [
+                { "answerText": "Rask utvikling av ny funksjonalitet", "isCorrect": false },
+                { "answerText": "Høy oppetid og pålitelighet for systemene", "isCorrect": true },
+                { "answerText": "Å oppnå optimaliserte søkemotorresultater", "isCorrect": false },
+                { "answerText": "Å skape et attraktivt brukergrensesnitt", "isCorrect": false }
+            ]
+        }
     ]
 }
