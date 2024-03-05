@@ -53,7 +53,7 @@ export default function Quiz() {
               3  {answerText: "javascript"}
             */
             
-            fetch(`http://localhost:8080/check/${selectedIndex}`)
+            fetch(`/check/${selectedIndex}`)
             .then(response => {
               if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -80,7 +80,7 @@ export default function Quiz() {
             setTotal(0)
             setIsVisible(true)
 
-            fetch('http://localhost:8080/retry')
+            fetch('/retry')
             .then(response => {
               if (!response.ok) {
                 throw new Error('Network response was not ok');
