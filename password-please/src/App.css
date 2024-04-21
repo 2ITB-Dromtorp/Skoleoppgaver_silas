@@ -1,38 +1,94 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+
+  padding: 10px;
+  background-color: #172815;
+}
+
+.App-header{
+  background-color: #3E5622;
+  height: 120px;
+  width: 940px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.Info{
+  background-color: #709255;
+  width: 940px;
+  height: 580px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Info, .App-header{
+  border: solid black 1px;
+}
+
+button{
+  border: black solid 0px;
   color: white;
+  background-color: #172815;
+
+  border: solid white 1px;
+  border-radius: 20px;
+  width: 225px;
+  height: 50px;
+  margin: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.table-container, .utlan-container {
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px; /* Smaller padding */
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.table-container-insert {
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px; /* Smaller padding */
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1em; /* Adjust font size as needed */
+}
+
+.styled-table th, .styled-table td {
+  border: 1.5px solid #3E5622;
+  padding: 6px; /* Smaller padding */
+  text-align: center;
+  background-color: #95B46A;
+}
+
+.insert{
+  width: 100px;
+}
+
+.table-container{
+  width: 800px;
+  height: 400px;
+}
+
+.utlan-container{
+  width: 800px;
+  height: 100px;
 }
