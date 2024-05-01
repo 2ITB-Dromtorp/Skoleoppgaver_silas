@@ -6,23 +6,23 @@
   align-items: center;
 
   padding: 10px;
-  background-color: #172815;
+  background-color: white;
 }
 
 .App-header{
-  background-color: #3E5622;
+  background-color: lightblue;
   height: 120px;
-  width: 940px;
+  width: 1200px;
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 .Info{
-  background-color: #709255;
-  width: 940px;
+  background-color: white;
+  width: 1200px;
   height: 580px;
 
   display: flex;
@@ -34,16 +34,23 @@
   border: solid black 1px;
 }
 
-button{
-  border: black solid 0px;
-  color: white;
-  background-color: #172815;
-
+button {
   border: solid white 1px;
   border-radius: 20px;
-  width: 225px;
+  width: 125px;
   height: 50px;
   margin: 5px;
+  color: white;
+  background-color: #007bff;
+  transition: background-color 0.3s ease; /* Added transition effect */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}
+
+button:active {
+  background-color: #003d80; /* Even darker color when pressed */
 }
 
 .table-container, .utlan-container {
@@ -73,10 +80,10 @@ button{
 }
 
 .styled-table th, .styled-table td {
-  border: 1.5px solid #3E5622;
+  border: 1.5px solid blue;
   padding: 6px; /* Smaller padding */
   text-align: center;
-  background-color: #95B46A;
+  background-color: white;
 }
 
 .insert{
@@ -84,11 +91,57 @@ button{
 }
 
 .table-container{
-  width: 800px;
-  height: 400px;
+  width: 1000px;
+  height: 450px;
 }
 
 .utlan-container{
-  width: 800px;
-  height: 100px;
+  width: 1000px;
+  height: 450px;
+}
+
+.buttons{
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.godkjen{
+  border: solid white 1px;
+  border-radius: 20px;
+  width: 125px;
+  height: 50px;
+  margin: 5px;
+  color: white;
+  background-color: #28a745; /* Green background color */
+  transition: background-color 0.3s ease; /* Added transition effect */
+}
+
+.godkjen:hover{
+  background-color: #218838; /* Darker green on hover */
+}
+
+.godkjen:active{
+  background-color: #1e7e34; /* Even darker green when pressed */
+}
+
+.avis{
+  border: solid white 1px;
+  border-radius: 20px;
+  width: 125px;
+  height: 50px;
+  margin: 5px;
+  color: white;
+  background-color: #dc3545; /* Red background color */
+  transition: background-color 0.3s ease; /* Added transition effect */
+}
+
+.avis:hover{
+  background-color: #c82333; /* Darker red on hover */
+}
+
+.avis:active{
+  background-color: #bd2130; /* Even darker red when pressed */
 }

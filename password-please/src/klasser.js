@@ -53,7 +53,7 @@ return(
                     <tr key={klasse.KlasseID}>
                         <td>{klasse.KlasseID}</td>
                         <td>{klasse.Navn}</td>
-                        <td>{klasse.Kontakt_laerer}</td>
+                        <td>{klasse.FornavnL}</td>
                     </tr>
                 ))}
             </tbody>
@@ -65,14 +65,14 @@ return(
             <thead>
                 <tr>
                     <th>laererID</th>
-                    <th>navn</th>
+                    <th>Fornavn</th>
                 </tr>
             </thead>
             <tbody>
                 {LaererData.map(laerer => (
                     <tr key={laerer.laererID}>
                         <td>{laerer.laererID}</td>
-                        <td>{laerer.Navn}</td>
+                        <td>{laerer.FornavnL}</td>
                     </tr>
                 ))}
             </tbody>

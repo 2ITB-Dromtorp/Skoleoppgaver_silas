@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './App.css';
 import axios from 'axios';
 
-export default function Utstyromm() {
+export default function Utstyrom() {
     const [UtstyrData, setUtstyrData] = useState([]);
 
 
@@ -13,7 +13,7 @@ useEffect(() => {
 
 const getUtstyrData = () => {
         axios
-            .get("http://localhost:3001/utstyromm")
+            .get("http://192.168.0.5:3001/utstyrom")
             .then(response => {
                 setUtstyrData(response.data);
             })
@@ -28,7 +28,7 @@ return(
             <thead>
                 <tr>
                     <th>utstyrID</th>
-                    <th>lanet_av</th>
+                    <th>venter på/har fått godkjenelse</th>
                     <th>utstyr_type</th>
                     <th>utstyr_modell</th>
                 </tr>

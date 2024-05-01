@@ -3,38 +3,58 @@ import { useState } from 'react';
 import './App.css';
 import axios from 'axios';
 
-export default function Update() {
+
+export default function Insert() {
 
 const [UtlanData, setUtlanData] = useState([]);
-
-useEffect(() => {
-  getUtlanData();
-}, []);
   
 const getUtlanData = () => {
   axios
-    .get("http://localhost:3001/utlan")
+    .get("http://192.168.0.5:3001/utlan")
     .then(response => {
       setUtlanData(response.data);
     })
     .catch(error => console.log(error));
 }
 
+  useEffect(() => {
+    getUtlanData();
 
+  
+    const interval = setInterval(() => {
+      getUtlanData();
+    }, 500); 
 
-async function insertData() {
+    return () => clearInterval(interval);
+  }, []);
+
+const deleteData = (delID, utstyrID) => {
+  const endpoint = 'http://192.168.0.5:3001/delete';
+        
+  axios.delete(`${endpoint}/${delID}/${utstyrID}`)
+    .then(response => {
+      console.log('Row deleted successfully:', response.data);
+    })
+    .catch(error => {
+      console.error('Error deleting row:', error);
+    });
+}
+
+async function insertData(utstyrID, lanet_av, utstyr_type, utstyr_modell, lanet_ut_dato, utlanID) {
 
   const userCredentials = {
-    key1: `${Value1}`,
-    key2: `${Value2}`,
-    key3: `${Value3}`,
-    key4: `${Value4}`,
-    key5: `${Value5}`,
-    key6: `${Value6}`,
+    key1: `${utstyrID}`,
+    key2: `${lanet_av}`,
+    key3: `${utstyr_type}`,
+    key4: `${utstyr_modell}`,
+    key5: `${lanet_ut_dato}`,
+    key6: `${utlanID}`
   };
+
+  console.log(userCredentials)
  
   try {
-    const response = await fetch('http://localhost:3001/insert', {
+    const response = await fetch('http://192.168.0.5:3001/godkjen', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -58,87 +78,8 @@ async function insertData() {
   }
 }
 
-const[Value1, setInValue1] = useState()
-const[Value2, setInValue2] = useState()
-const[Value3, setInValue3] = useState()
-const[Value4, setInValue4] = useState()
-const[Value5, setInValue5] = useState(Date())
-const[Value6, setInValue6] = useState()
-
-const change1 = Event =>{
-    setInValue1(Event.target.value)
-}
-
-const change2 = Event =>{
-    setInValue2(Event.target.value)
-}
-
-const change3 = Event =>{
-    setInValue3(Event.target.value)
-}
-
-const change4 = Event =>{
-    setInValue4(Event.target.value)
-}
-
-const change5 = Event =>{
-    setInValue5(Event.target.value)
-}
-
-const change6 = Event =>{
-    setInValue6(Event.target.value)
-}
-
-const deleteData = () => {
-  const endpoint = 'http://localhost:3001/delete';
-        
-  axios.delete(`${endpoint}/${Del}`)
-    .then(response => {
-      console.log('Row deleted successfully:', response.data);
-    })
-    .catch(error => {
-      console.error('Error deleting row:', error);
-    });
-}
-
-const[Del, setDel] = useState()
-
-const Del1 = Event =>{
-  setDel(Event.target.value)
-}
-
-
-
 return(
   <div className='hjem'>
-    Lag en ny rad. Fyll in alle feltene så trykk på insert.
-  <div className="table-container-insert">
-            
-    <table className="styled-table">
-      <thead>
-        <tr>
-          <th>UtlanID</th>
-          <th>lanet_av</th>
-          <th>utstyr_type</th>
-          <th>utstyr_modell</th>
-          <th>lanet_ut_dato</th>
-          <th>godkjent_av</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><input type='number' value={Value1} onChange={change1} className='insert'/></td>
-          <td><input type='number' value={Value2} onChange={change2} className='insert'/></td>
-          <td><input type='number' value={Value3} onChange={change3} className='insert'/></td>
-          <td><input type='number' value={Value4} onChange={change4} className='insert'/></td>
-          <td><input type='date' value={Value5} onChange={change5} className='insert'/></td>
-          <td><input type='number' value={Value6} onChange={change6} className='insert'/></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <button onClick={insertData}> Insert </button>
 
   <div className='selectBox'>
     <div className="utlan-container">
@@ -147,35 +88,30 @@ return(
             <thead>
                 <tr>
                     <th>UtlånID</th>
-                    <th>lånet av</th>
-                    <th>utstyr type</th>
-                    <th>utstyr modell</th>
-                    <th>lånet ut dato</th>
-                    <th>godkjent av</th>
+                    <th>Fulltnavn</th>
+                    <th>UtstyrID</th>
+                    <th>Utstyr type</th>
+                    <th>Utstyr modell</th>
+                    <th>Lånet ut dato</th>
+                    <th>Godkjen?</th>
                 </tr>
             </thead>
             <tbody>
                 {UtlanData.map(utlan => (
                     <tr key={utlan.UtlanID}>
                         <td>{utlan.UtlanID}</td>
-                        <td>{utlan.lanet_av}</td>
+                        <td>{utlan.Fornavn} {utlan.Etternavn}</td>
+                        <td>{utlan.utstyrID}</td>
                         <td>{utlan.utstyr_type}</td>
-                        <td>{utlan.utstyr_modell}</td>
+                        <td>{utlan.utsyr_modell_ID}</td>
                         <td>{utlan.lanet_ut_dato}</td>
-                        <td>{utlan.godkjent_av}</td>
+                        <td><button className='godkjen' onClick={() => insertData(utlan.utstyrID, utlan.lanet_av, utlan.utstyr_type, utlan.utsyr_modell_ID, utlan.lanet_ut_dato, utlan.UtlanID)}>godkjen</button> <button className='avis' onClick={() => deleteData(utlan.UtlanID, utlan.utstyrID)}>avis</button></td>
                     </tr>
                 ))}
             </tbody>
         </table>
     </div>
     </div>
-
-    <br/>
-  <label>
-    Skriv in UtlanID-en til raden du vil slette <input type='number' value={Del} onChange={Del1}/>
-  </label>
-  <br/>
-  <button onClick={deleteData}> Delete </button>
 
 </div>
 )

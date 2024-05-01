@@ -13,7 +13,7 @@ useEffect(() => {
 
 const getElevData = () => {
         axios
-            .get("http://localhost:3001/elev")
+            .get("http://192.168.0.5:3001/elev")
             .then(response => {
                 setElevData(response.data);
             })
@@ -28,8 +28,7 @@ return(
             <thead>
                 <tr>
                     <th>ElevID</th>
-                    <th>Fornavn</th>
-                    <th>Etternavn</th>
+                    <th>Navn</th>
                     <th>Klasse</th>
                     <th>tlf</th>
                     <th>Epost</th>
@@ -39,9 +38,8 @@ return(
                 {ElevData.map(elev => (
                     <tr key={elev.ElevID}>
                         <td>{elev.ElevID}</td>
-                        <td>{elev.Fornavn}</td>
-                        <td>{elev.Etternavn}</td>
-                        <td>{elev.Klasse}</td>
+                        <td>{elev.Fornavn} {elev.Etternavn}</td>
+                        <td>{elev.Navn}</td>
                         <td>{elev.tlf}</td>
                         <td>{elev.epost}</td>
                     </tr>

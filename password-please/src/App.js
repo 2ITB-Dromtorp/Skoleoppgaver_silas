@@ -1,39 +1,61 @@
-import logo from './logo.svg';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import Select from './elev';
-import Update from './update';
 import Insert from './insert';
-import Utstyromm from './utstyromm';
-import Empty from './empty';
-import Klasser from './klasser';
-import Utstyr_modell from './utstyr_modell';
+import Utstyrom from './utstyromm';
+import Ettersporsel from './ettersporsel';
+import Login from './login';
+import Loggedout from './loggedout';
+import Lantut from './lantut';
+import { useState } from 'react';
 
 function App() {
 
   let navigate = useNavigate();
 
+  const [LoginL, setLoginL] = useState()
+  const [LoginE, setLoginE] = useState()
+  const [ElevID, setElevID] = useState()
+  let homepage;
+
+  if (!LoginL && !LoginE){
+    homepage = <Loggedout />;
+  } else if (LoginL == true) {
+    homepage = <Insert />;
+  } else if (LoginE == true) {
+    homepage = <Ettersporsel ElevID={ElevID}/>;
+  }
+
+  function Logout() {
+    setLoginE(false)
+    setLoginL(false)
+    setElevID(null)
+    navigate('./')
+  }
+
   return (
     <div className="App">
+
       <header className="App-header">
-        <button onClick={() => navigate('./Select')}> elev </button>
-        <button onClick={() => navigate('./klasser')}> klasser </button>
-        <button onClick={() => navigate('./Update')}> utstyr typer </button>
-        <button onClick={() => navigate('./Utstyr_modell')}> Utstyr modell </button>
-        <button onClick={() => navigate('./Insert')}> utlån </button>
-        <button onClick={() => navigate('./Utstyromm')}> utstyromm </button>
+        <div className='buttons'>
+          <button onClick={() => navigate('./')}> hjem </button>
+          <button onClick={() => navigate('./Utstyrom')}> utstyrom </button>
+          <button onClick={() => navigate('./Lantut')}> lånet ut </button>
+        </div> {/*slutt buttons*/ }
+
+        <div className='other_stuff'>
+          <button onClick={() => navigate('./Login')}> Login </button>
+          <button onClick={Logout}> logut </button>
+        </div> {/*slutt other_stuff*/}
+
       </header>
 
       <div className='Info'>
       <Routes>
-          <Route path="/" element={<Empty /> } />
-          <Route path="/Select" element={<Select /> } />
-          <Route path="/klasser" element={<Klasser />} />
-          <Route path="/Update" element={<Update />} />
-          <Route path="/Utstyr_modell" element={<Utstyr_modell />} />
-          <Route path="/Insert" element={<Insert />} />
-          <Route path="/Utstyromm" element={<Utstyromm />} />
+          <Route path="/" element={homepage } />
+          <Route path="/Utstyrom" element={<Utstyrom />} />
+          <Route path="/Lantut" element={<Lantut ElevID={ElevID}/>} />
+          <Route path="/Login" element={<Login setLoginL={setLoginL} setLoginE={setLoginE} setElevID={setElevID}/>} />
           
        </Routes>
       </div>

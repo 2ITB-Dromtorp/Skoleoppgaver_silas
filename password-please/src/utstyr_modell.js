@@ -36,7 +36,7 @@ return(
                 {Utstyr_modellData.map(Utstyr_modell => (
                     <tr key={Utstyr_modell.utsyr_modell_ID}>
                         <td>{Utstyr_modell.utsyr_modell_ID}</td>
-                        <td>{Utstyr_modell.utsyr_type}</td>
+                        <td>{Utstyr_modell.utstyr_type}</td>
                         <td>{Utstyr_modell.utstyr_modell}</td>
                     </tr>
                 ))}
