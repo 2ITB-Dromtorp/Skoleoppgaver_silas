@@ -31,7 +31,7 @@ dette programet kerever at du instalerer cors, express, bodyParser, react-router
 [![express Download]][express-url]
 [![bodyParser Download]][bodyParser-url]
 [![react-router-dom Download]][react-router-dom-url]
-[![bcrypt]][bcrypt]
+[![bcrypt Download]][bcrypt-url]
 
 ## usage
 
@@ -856,4 +856,4 @@ Silas Surland-Fjær
 [express-url]: https://www.npmjs.com/package/express
 [bodyParser-url]: https://www.npmjs.com/package/body-parser
 [react-router-dom-url]: https://www.npmjs.com/package/react-router-dom
-[bcrypt]: https://www.npmjs.com/package/bcrypt
+[bcrypt-url]: https://www.npmjs.com/package/bcrypt
