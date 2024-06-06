@@ -1,0 +1,133 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  background-color: white;
+}
+
+.App-header{
+  background-color:bisque;
+  height: 120px;
+  width: 1260px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Info{
+  background-color: white;
+  width: 1260px;
+  height: 580px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  border: solid white 1px;
+  border-radius: 20px;
+  width: 125px;
+  height: 40px;
+  margin: 5px;
+  color: white;
+  background-color: #cd5c5c;
+  transition: background-color 0.3s ease; /* Added transition effect */
+}
+
+button:hover {
+  background-color: #c05353; /* Darker color on hover */
+}
+
+button:active {
+  background-color: #9e3d3d; /* Even darker color when pressed */
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1em; /* Adjust font size as needed */
+
+  display: flex;
+  flex-direction: row;
+}
+
+.styled-table th, .styled-table td {
+  padding: 15px; /* Smaller padding */
+  text-align: center;
+}
+
+tbody{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: space-around;
+}
+
+.Vare_box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 225px;
+  height: 225px;
+
+  background-color: beige;
+  border-radius: 50px;
+  border: solid lightcoral 2px;
+}
+
+.Vare_Img{
+  width: 225px;
+  height: 90px;
+
+  border-radius: 50px;
+}
+
+.Vare_box button{
+  align-self: center;
+  justify-self: center;
+}
+
+.Vare_text{
+  margin: 5px;
+}
+
+.insert{
+  width: 100px;
+}
+
+.table-container{
+  width: 1200px;
+  height: 450px;
+}
+
+.buttons{
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.other_stuff{
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+input{
+  width: 80px;
+  border-radius: 10;
+
+  justify-self: center;
+  align-self: center;
+}

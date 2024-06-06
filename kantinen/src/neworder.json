@@ -1,0 +1,21 @@
+[
+    {
+        "MenyID": 19, "Vare": "Burger", "Allergi": null, "Antall": 12, "Pris": 39
+    },
+
+    {
+        "MenyID": 20, "Vare": "pizza", "Allergi": "Gluten(Hvete), Melk", "Antall": 8, "Pris": 35
+    },
+
+    {
+        "MenyID": 21, "Vare": "Sorbet Bringebær", "Allergi": null, "Antall": 2, "Pris": 50
+    },
+
+    {
+        "MenyID": 22, "Vare": "Mango", "Allergi": null, "Antall": 32, "Pris": 9
+    },
+
+    {
+        "MenyID": 23, "Vare": "Banan", "Allergi": null, "Antall": 3, "Pris": 12
+    }
+]
